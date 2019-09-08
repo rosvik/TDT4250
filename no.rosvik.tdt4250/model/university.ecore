@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="university" nsURI="no.rosvik.uni.test" nsPrefix="uni">
+  <eClassifiers xsi:type="ecore:EClass" name="Programmes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+        eType="#//ProgrammeInstances" eOpposite="#//ProgrammeInstances/programme"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeInstances">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programme" lowerBound="1"
+        eType="#//Programmes" eOpposite="#//Programmes/instances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
+        eType="#//ProgrammeSemester" eOpposite="#//ProgrammeSemester/programmeInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Courses">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+        eType="#//CourseInstances" eOpposite="#//CourseInstances/course"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseInstances">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" lowerBound="1"
+        eType="#//Courses" eOpposite="#//Courses/instances"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeSemester">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeInstance" eType="#//ProgrammeInstances"
+        eOpposite="#//ProgrammeInstances/semesters"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="couseInstances" upperBound="-1"
+        eType="#//CourseInstances"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Semesters">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semesterInstances" upperBound="-1"
+        eType="#//ProgrammeSemester"/>
+  </eClassifiers>
+</ecore:EPackage>
