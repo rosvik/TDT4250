@@ -85,13 +85,22 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMMES__NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMMES__CODE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Programmes</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMMES_FEATURE_COUNT = 2;
+	int PROGRAMMES_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Programmes</em>' class.
@@ -122,7 +131,7 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_INSTANCES__PROGRAMME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Semesters</b></em>' reference list.
+	 * The feature id for the '<em><b>Semesters</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -140,13 +149,22 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_INSTANCES__SPECIALIZATIONS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Start Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME_INSTANCES__START_YEAR = 3;
+
+	/**
 	 * The number of structural features of the '<em>Programme Instances</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_INSTANCES_FEATURE_COUNT = 3;
+	int PROGRAMME_INSTANCES_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Programme Instances</em>' class.
@@ -241,13 +259,22 @@ public interface UniversityPackage extends EPackage {
 	int COURSE_INSTANCES__COURSE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Semester</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COURSE_INSTANCES__SEMESTER = 1;
+
+	/**
 	 * The number of structural features of the '<em>Course Instances</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_INSTANCES_FEATURE_COUNT = 1;
+	int COURSE_INSTANCES_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Course Instances</em>' class.
@@ -259,14 +286,14 @@ public interface UniversityPackage extends EPackage {
 	int COURSE_INSTANCES_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link university.impl.ProgrammeSemesterImpl <em>Programme Semester</em>}' class.
+	 * The meta object id for the '{@link university.impl.ProgrammeSemestersImpl <em>Programme Semesters</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see university.impl.ProgrammeSemesterImpl
-	 * @see university.impl.UniversityPackageImpl#getProgrammeSemester()
+	 * @see university.impl.ProgrammeSemestersImpl
+	 * @see university.impl.UniversityPackageImpl#getProgrammeSemesters()
 	 * @generated
 	 */
-	int PROGRAMME_SEMESTER = 4;
+	int PROGRAMME_SEMESTERS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Programme Instance</b></em>' reference.
@@ -275,7 +302,7 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_SEMESTER__PROGRAMME_INSTANCE = 0;
+	int PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Couse Instances</b></em>' reference list.
@@ -284,25 +311,34 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_SEMESTER__COUSE_INSTANCES = 1;
+	int PROGRAMME_SEMESTERS__COUSE_INSTANCES = 1;
 
 	/**
-	 * The number of structural features of the '<em>Programme Semester</em>' class.
+	 * The feature id for the '<em><b>Semester</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_SEMESTER_FEATURE_COUNT = 2;
+	int PROGRAMME_SEMESTERS__SEMESTER = 2;
 
 	/**
-	 * The number of operations of the '<em>Programme Semester</em>' class.
+	 * The number of structural features of the '<em>Programme Semesters</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_SEMESTER_OPERATION_COUNT = 0;
+	int PROGRAMME_SEMESTERS_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Programme Semesters</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME_SEMESTERS_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link university.impl.SemestersImpl <em>Semesters</em>}' class.
@@ -315,22 +351,13 @@ public interface UniversityPackage extends EPackage {
 	int SEMESTERS = 5;
 
 	/**
-	 * The feature id for the '<em><b>Semester Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTERS__SEMESTER_INSTANCES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTERS__YEAR = 1;
+	int SEMESTERS__YEAR = 0;
 
 	/**
 	 * The feature id for the '<em><b>Season</b></em>' attribute.
@@ -339,7 +366,7 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTERS__SEASON = 2;
+	int SEMESTERS__SEASON = 1;
 
 	/**
 	 * The number of structural features of the '<em>Semesters</em>' class.
@@ -348,7 +375,7 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTERS_FEATURE_COUNT = 3;
+	int SEMESTERS_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Semesters</em>' class.
@@ -358,7 +385,6 @@ public interface UniversityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEMESTERS_OPERATION_COUNT = 0;
-
 
 	/**
 	 * The meta object id for the '{@link university.impl.SpecializationsImpl <em>Specializations</em>}' class.
@@ -440,6 +466,17 @@ public interface UniversityPackage extends EPackage {
 	EAttribute getProgrammes_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link university.Programmes#getCode <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Code</em>'.
+	 * @see university.Programmes#getCode()
+	 * @see #getProgrammes()
+	 * @generated
+	 */
+	EAttribute getProgrammes_Code();
+
+	/**
 	 * Returns the meta object for class '{@link university.ProgrammeInstances <em>Programme Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -461,10 +498,10 @@ public interface UniversityPackage extends EPackage {
 	EReference getProgrammeInstances_Programme();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.ProgrammeInstances#getSemesters <em>Semesters</em>}'.
+	 * Returns the meta object for the reference '{@link university.ProgrammeInstances#getSemesters <em>Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Semesters</em>'.
+	 * @return the meta object for the reference '<em>Semesters</em>'.
 	 * @see university.ProgrammeInstances#getSemesters()
 	 * @see #getProgrammeInstances()
 	 * @generated
@@ -481,6 +518,17 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProgrammeInstances_Specializations();
+
+	/**
+	 * Returns the meta object for the attribute '{@link university.ProgrammeInstances#getStartYear <em>Start Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Year</em>'.
+	 * @see university.ProgrammeInstances#getStartYear()
+	 * @see #getProgrammeInstances()
+	 * @generated
+	 */
+	EAttribute getProgrammeInstances_StartYear();
 
 	/**
 	 * Returns the meta object for class '{@link university.Courses <em>Courses</em>}'.
@@ -558,36 +606,58 @@ public interface UniversityPackage extends EPackage {
 	EReference getCourseInstances_Course();
 
 	/**
-	 * Returns the meta object for class '{@link university.ProgrammeSemester <em>Programme Semester</em>}'.
+	 * Returns the meta object for the reference '{@link university.CourseInstances#getSemester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Programme Semester</em>'.
-	 * @see university.ProgrammeSemester
+	 * @return the meta object for the reference '<em>Semester</em>'.
+	 * @see university.CourseInstances#getSemester()
+	 * @see #getCourseInstances()
 	 * @generated
 	 */
-	EClass getProgrammeSemester();
+	EReference getCourseInstances_Semester();
 
 	/**
-	 * Returns the meta object for the reference '{@link university.ProgrammeSemester#getProgrammeInstance <em>Programme Instance</em>}'.
+	 * Returns the meta object for class '{@link university.ProgrammeSemesters <em>Programme Semesters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Programme Semesters</em>'.
+	 * @see university.ProgrammeSemesters
+	 * @generated
+	 */
+	EClass getProgrammeSemesters();
+
+	/**
+	 * Returns the meta object for the reference '{@link university.ProgrammeSemesters#getProgrammeInstance <em>Programme Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Programme Instance</em>'.
-	 * @see university.ProgrammeSemester#getProgrammeInstance()
-	 * @see #getProgrammeSemester()
+	 * @see university.ProgrammeSemesters#getProgrammeInstance()
+	 * @see #getProgrammeSemesters()
 	 * @generated
 	 */
-	EReference getProgrammeSemester_ProgrammeInstance();
+	EReference getProgrammeSemesters_ProgrammeInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.ProgrammeSemester#getCouseInstances <em>Couse Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link university.ProgrammeSemesters#getCouseInstances <em>Couse Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Couse Instances</em>'.
-	 * @see university.ProgrammeSemester#getCouseInstances()
-	 * @see #getProgrammeSemester()
+	 * @see university.ProgrammeSemesters#getCouseInstances()
+	 * @see #getProgrammeSemesters()
 	 * @generated
 	 */
-	EReference getProgrammeSemester_CouseInstances();
+	EReference getProgrammeSemesters_CouseInstances();
+
+	/**
+	 * Returns the meta object for the reference '{@link university.ProgrammeSemesters#getSemester <em>Semester</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Semester</em>'.
+	 * @see university.ProgrammeSemesters#getSemester()
+	 * @see #getProgrammeSemesters()
+	 * @generated
+	 */
+	EReference getProgrammeSemesters_Semester();
 
 	/**
 	 * Returns the meta object for class '{@link university.Semesters <em>Semesters</em>}'.
@@ -598,17 +668,6 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSemesters();
-
-	/**
-	 * Returns the meta object for the reference list '{@link university.Semesters#getSemesterInstances <em>Semester Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Semester Instances</em>'.
-	 * @see university.Semesters#getSemesterInstances()
-	 * @see #getSemesters()
-	 * @generated
-	 */
-	EReference getSemesters_SemesterInstances();
 
 	/**
 	 * Returns the meta object for the attribute '{@link university.Semesters#getYear <em>Year</em>}'.
@@ -714,6 +773,14 @@ public interface UniversityPackage extends EPackage {
 		EAttribute PROGRAMMES__NAME = eINSTANCE.getProgrammes_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMMES__CODE = eINSTANCE.getProgrammes_Code();
+
+		/**
 		 * The meta object literal for the '{@link university.impl.ProgrammeInstancesImpl <em>Programme Instances</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -732,7 +799,7 @@ public interface UniversityPackage extends EPackage {
 		EReference PROGRAMME_INSTANCES__PROGRAMME = eINSTANCE.getProgrammeInstances_Programme();
 
 		/**
-		 * The meta object literal for the '<em><b>Semesters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Semesters</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -746,6 +813,14 @@ public interface UniversityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROGRAMME_INSTANCES__SPECIALIZATIONS = eINSTANCE.getProgrammeInstances_Specializations();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME_INSTANCES__START_YEAR = eINSTANCE.getProgrammeInstances_StartYear();
 
 		/**
 		 * The meta object literal for the '{@link university.impl.CoursesImpl <em>Courses</em>}' class.
@@ -808,14 +883,22 @@ public interface UniversityPackage extends EPackage {
 		EReference COURSE_INSTANCES__COURSE = eINSTANCE.getCourseInstances_Course();
 
 		/**
-		 * The meta object literal for the '{@link university.impl.ProgrammeSemesterImpl <em>Programme Semester</em>}' class.
+		 * The meta object literal for the '<em><b>Semester</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see university.impl.ProgrammeSemesterImpl
-		 * @see university.impl.UniversityPackageImpl#getProgrammeSemester()
 		 * @generated
 		 */
-		EClass PROGRAMME_SEMESTER = eINSTANCE.getProgrammeSemester();
+		EReference COURSE_INSTANCES__SEMESTER = eINSTANCE.getCourseInstances_Semester();
+
+		/**
+		 * The meta object literal for the '{@link university.impl.ProgrammeSemestersImpl <em>Programme Semesters</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see university.impl.ProgrammeSemestersImpl
+		 * @see university.impl.UniversityPackageImpl#getProgrammeSemesters()
+		 * @generated
+		 */
+		EClass PROGRAMME_SEMESTERS = eINSTANCE.getProgrammeSemesters();
 
 		/**
 		 * The meta object literal for the '<em><b>Programme Instance</b></em>' reference feature.
@@ -823,7 +906,7 @@ public interface UniversityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_SEMESTER__PROGRAMME_INSTANCE = eINSTANCE.getProgrammeSemester_ProgrammeInstance();
+		EReference PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE = eINSTANCE.getProgrammeSemesters_ProgrammeInstance();
 
 		/**
 		 * The meta object literal for the '<em><b>Couse Instances</b></em>' reference list feature.
@@ -831,7 +914,15 @@ public interface UniversityPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_SEMESTER__COUSE_INSTANCES = eINSTANCE.getProgrammeSemester_CouseInstances();
+		EReference PROGRAMME_SEMESTERS__COUSE_INSTANCES = eINSTANCE.getProgrammeSemesters_CouseInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Semester</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME_SEMESTERS__SEMESTER = eINSTANCE.getProgrammeSemesters_Semester();
 
 		/**
 		 * The meta object literal for the '{@link university.impl.SemestersImpl <em>Semesters</em>}' class.
@@ -842,14 +933,6 @@ public interface UniversityPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SEMESTERS = eINSTANCE.getSemesters();
-
-		/**
-		 * The meta object literal for the '<em><b>Semester Instances</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SEMESTERS__SEMESTER_INSTANCES = eINSTANCE.getSemesters_SemesterInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import university.CourseInstances;
 import university.Courses;
+import university.Semesters;
 import university.UniversityPackage;
 
 /**
@@ -24,6 +25,7 @@ import university.UniversityPackage;
  * </p>
  * <ul>
  *   <li>{@link university.impl.CourseInstancesImpl#getCourse <em>Course</em>}</li>
+ *   <li>{@link university.impl.CourseInstancesImpl#getSemester <em>Semester</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +40,16 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected Courses course;
+
+	/**
+	 * The cached value of the '{@link #getSemester() <em>Semester</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemester()
+	 * @generated
+	 * @ordered
+	 */
+	protected Semesters semester;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +138,46 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public Semesters getSemester() {
+		if (semester != null && semester.eIsProxy()) {
+			InternalEObject oldSemester = (InternalEObject)semester;
+			semester = (Semesters)eResolveProxy(oldSemester);
+			if (semester != oldSemester) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.COURSE_INSTANCES__SEMESTER, oldSemester, semester));
+			}
+		}
+		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Semesters basicGetSemester() {
+		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSemester(Semesters newSemester) {
+		Semesters oldSemester = semester;
+		semester = newSemester;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.COURSE_INSTANCES__SEMESTER, oldSemester, semester));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
@@ -161,6 +213,9 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
 				if (resolve) return getCourse();
 				return basicGetCourse();
+			case UniversityPackage.COURSE_INSTANCES__SEMESTER:
+				if (resolve) return getSemester();
+				return basicGetSemester();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,6 +230,9 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
 				setCourse((Courses)newValue);
+				return;
+			case UniversityPackage.COURSE_INSTANCES__SEMESTER:
+				setSemester((Semesters)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,6 +249,9 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
 				setCourse((Courses)null);
 				return;
+			case UniversityPackage.COURSE_INSTANCES__SEMESTER:
+				setSemester((Semesters)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -205,6 +266,8 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
 				return course != null;
+			case UniversityPackage.COURSE_INSTANCES__SEMESTER:
+				return semester != null;
 		}
 		return super.eIsSet(featureID);
 	}

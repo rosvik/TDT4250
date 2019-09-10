@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import university.ProgrammeInstances;
-import university.ProgrammeSemester;
+import university.ProgrammeSemesters;
 import university.Programmes;
 import university.Specializations;
 import university.UniversityPackage;
@@ -35,6 +35,7 @@ import university.UniversityPackage;
  *   <li>{@link university.impl.ProgrammeInstancesImpl#getProgramme <em>Programme</em>}</li>
  *   <li>{@link university.impl.ProgrammeInstancesImpl#getSemesters <em>Semesters</em>}</li>
  *   <li>{@link university.impl.ProgrammeInstancesImpl#getSpecializations <em>Specializations</em>}</li>
+ *   <li>{@link university.impl.ProgrammeInstancesImpl#getStartYear <em>Start Year</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,14 +52,14 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	protected Programmes programme;
 
 	/**
-	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' reference list.
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSemesters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ProgrammeSemester> semesters;
+	protected ProgrammeSemesters semesters;
 
 	/**
 	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' reference list.
@@ -69,6 +70,26 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<Specializations> specializations;
+
+	/**
+	 * The default value of the '{@link #getStartYear() <em>Start Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int START_YEAR_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getStartYear() <em>Start Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected int startYear = START_YEAR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,11 +178,60 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EList<ProgrammeSemester> getSemesters() {
-		if (semesters == null) {
-			semesters = new EObjectWithInverseResolvingEList<ProgrammeSemester>(ProgrammeSemester.class, this, UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS, UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE);
+	public ProgrammeSemesters getSemesters() {
+		if (semesters != null && semesters.eIsProxy()) {
+			InternalEObject oldSemesters = (InternalEObject)semesters;
+			semesters = (ProgrammeSemesters)eResolveProxy(oldSemesters);
+			if (semesters != oldSemesters) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS, oldSemesters, semesters));
+			}
 		}
 		return semesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProgrammeSemesters basicGetSemesters() {
+		return semesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSemesters(ProgrammeSemesters newSemesters, NotificationChain msgs) {
+		ProgrammeSemesters oldSemesters = semesters;
+		semesters = newSemesters;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS, oldSemesters, newSemesters);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSemesters(ProgrammeSemesters newSemesters) {
+		if (newSemesters != semesters) {
+			NotificationChain msgs = null;
+			if (semesters != null)
+				msgs = ((InternalEObject)semesters).eInverseRemove(this, UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE, ProgrammeSemesters.class, msgs);
+			if (newSemesters != null)
+				msgs = ((InternalEObject)newSemesters).eInverseAdd(this, UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE, ProgrammeSemesters.class, msgs);
+			msgs = basicSetSemesters(newSemesters, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS, newSemesters, newSemesters));
 	}
 
 	/**
@@ -182,6 +252,29 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public int getStartYear() {
+		return startYear;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStartYear(int newStartYear) {
+		int oldStartYear = startYear;
+		startYear = newStartYear;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_INSTANCES__START_YEAR, oldStartYear, startYear));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -191,7 +284,9 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 					msgs = ((InternalEObject)programme).eInverseRemove(this, UniversityPackage.PROGRAMMES__INSTANCES, Programmes.class, msgs);
 				return basicSetProgramme((Programmes)otherEnd, msgs);
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSemesters()).basicAdd(otherEnd, msgs);
+				if (semesters != null)
+					msgs = ((InternalEObject)semesters).eInverseRemove(this, UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE, ProgrammeSemesters.class, msgs);
+				return basicSetSemesters((ProgrammeSemesters)otherEnd, msgs);
 			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpecializations()).basicAdd(otherEnd, msgs);
 		}
@@ -209,7 +304,7 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 			case UniversityPackage.PROGRAMME_INSTANCES__PROGRAMME:
 				return basicSetProgramme(null, msgs);
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
-				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
+				return basicSetSemesters(null, msgs);
 			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
 				return ((InternalEList<?>)getSpecializations()).basicRemove(otherEnd, msgs);
 		}
@@ -228,9 +323,12 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				if (resolve) return getProgramme();
 				return basicGetProgramme();
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
-				return getSemesters();
+				if (resolve) return getSemesters();
+				return basicGetSemesters();
 			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
 				return getSpecializations();
+			case UniversityPackage.PROGRAMME_INSTANCES__START_YEAR:
+				return getStartYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,12 +346,14 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				setProgramme((Programmes)newValue);
 				return;
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
-				getSemesters().clear();
-				getSemesters().addAll((Collection<? extends ProgrammeSemester>)newValue);
+				setSemesters((ProgrammeSemesters)newValue);
 				return;
 			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
 				getSpecializations().clear();
 				getSpecializations().addAll((Collection<? extends Specializations>)newValue);
+				return;
+			case UniversityPackage.PROGRAMME_INSTANCES__START_YEAR:
+				setStartYear((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,10 +371,13 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				setProgramme((Programmes)null);
 				return;
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
-				getSemesters().clear();
+				setSemesters((ProgrammeSemesters)null);
 				return;
 			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
 				getSpecializations().clear();
+				return;
+			case UniversityPackage.PROGRAMME_INSTANCES__START_YEAR:
+				setStartYear(START_YEAR_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -291,11 +394,29 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 			case UniversityPackage.PROGRAMME_INSTANCES__PROGRAMME:
 				return programme != null;
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
-				return semesters != null && !semesters.isEmpty();
+				return semesters != null;
 			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
 				return specializations != null && !specializations.isEmpty();
+			case UniversityPackage.PROGRAMME_INSTANCES__START_YEAR:
+				return startYear != START_YEAR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (startYear: ");
+		result.append(startYear);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ProgrammeInstancesImpl

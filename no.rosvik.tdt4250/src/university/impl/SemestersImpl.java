@@ -2,19 +2,13 @@
  */
 package university.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import university.ProgrammeSemester;
 import university.Semesters;
 import university.UniversityPackage;
 
@@ -26,7 +20,6 @@ import university.UniversityPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link university.impl.SemestersImpl#getSemesterInstances <em>Semester Instances</em>}</li>
  *   <li>{@link university.impl.SemestersImpl#getYear <em>Year</em>}</li>
  *   <li>{@link university.impl.SemestersImpl#isSeason <em>Season</em>}</li>
  * </ul>
@@ -34,16 +27,6 @@ import university.UniversityPackage;
  * @generated
  */
 public class SemestersImpl extends MinimalEObjectImpl.Container implements Semesters {
-	/**
-	 * The cached value of the '{@link #getSemesterInstances() <em>Semester Instances</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSemesterInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ProgrammeSemester> semesterInstances;
-
 	/**
 	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,6 +36,7 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * @ordered
 	 */
 	protected static final int YEAR_EDEFAULT = 0;
+
 	/**
 	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -62,6 +46,7 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * @ordered
 	 */
 	protected int year = YEAR_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #isSeason() <em>Season</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,6 +56,7 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * @ordered
 	 */
 	protected static final boolean SEASON_EDEFAULT = false;
+
 	/**
 	 * The cached value of the '{@link #isSeason() <em>Season</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -98,19 +84,6 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	@Override
 	protected EClass eStaticClass() {
 		return UniversityPackage.Literals.SEMESTERS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<ProgrammeSemester> getSemesterInstances() {
-		if (semesterInstances == null) {
-			semesterInstances = new EObjectResolvingEList<ProgrammeSemester>(ProgrammeSemester.class, this, UniversityPackage.SEMESTERS__SEMESTER_INSTANCES);
-		}
-		return semesterInstances;
 	}
 
 	/**
@@ -167,8 +140,6 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UniversityPackage.SEMESTERS__SEMESTER_INSTANCES:
-				return getSemesterInstances();
 			case UniversityPackage.SEMESTERS__YEAR:
 				return getYear();
 			case UniversityPackage.SEMESTERS__SEASON:
@@ -182,14 +153,9 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UniversityPackage.SEMESTERS__SEMESTER_INSTANCES:
-				getSemesterInstances().clear();
-				getSemesterInstances().addAll((Collection<? extends ProgrammeSemester>)newValue);
-				return;
 			case UniversityPackage.SEMESTERS__YEAR:
 				setYear((Integer)newValue);
 				return;
@@ -208,9 +174,6 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UniversityPackage.SEMESTERS__SEMESTER_INSTANCES:
-				getSemesterInstances().clear();
-				return;
 			case UniversityPackage.SEMESTERS__YEAR:
 				setYear(YEAR_EDEFAULT);
 				return;
@@ -229,8 +192,6 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UniversityPackage.SEMESTERS__SEMESTER_INSTANCES:
-				return semesterInstances != null && !semesterInstances.isEmpty();
 			case UniversityPackage.SEMESTERS__YEAR:
 				return year != YEAR_EDEFAULT;
 			case UniversityPackage.SEMESTERS__SEASON:

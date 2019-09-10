@@ -94,8 +94,8 @@ public class UniversityValidator extends EObjectValidator {
 				return validateCourses((Courses)value, diagnostics, context);
 			case UniversityPackage.COURSE_INSTANCES:
 				return validateCourseInstances((CourseInstances)value, diagnostics, context);
-			case UniversityPackage.PROGRAMME_SEMESTER:
-				return validateProgrammeSemester((ProgrammeSemester)value, diagnostics, context);
+			case UniversityPackage.PROGRAMME_SEMESTERS:
+				return validateProgrammeSemesters((ProgrammeSemesters)value, diagnostics, context);
 			case UniversityPackage.SEMESTERS:
 				return validateSemesters((Semesters)value, diagnostics, context);
 			case UniversityPackage.SPECIALIZATIONS:
@@ -146,8 +146,8 @@ public class UniversityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProgrammeSemester(ProgrammeSemester programmeSemester, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programmeSemester, diagnostics, context);
+	public boolean validateProgrammeSemesters(ProgrammeSemesters programmeSemesters, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(programmeSemesters, diagnostics, context);
 	}
 
 	/**

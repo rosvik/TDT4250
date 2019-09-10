@@ -58,13 +58,13 @@ public interface UniversityFactory extends EFactory {
 	CourseInstances createCourseInstances();
 
 	/**
-	 * Returns a new object of class '<em>Programme Semester</em>'.
+	 * Returns a new object of class '<em>Programme Semesters</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme Semester</em>'.
+	 * @return a new object of class '<em>Programme Semesters</em>'.
 	 * @generated
 	 */
-	ProgrammeSemester createProgrammeSemester();
+	ProgrammeSemesters createProgrammeSemesters();
 
 	/**
 	 * Returns a new object of class '<em>Semesters</em>'.

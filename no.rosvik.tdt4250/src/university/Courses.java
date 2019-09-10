@@ -31,10 +31,6 @@ public interface Courses extends EObject {
 	 * The list contents are of type {@link university.CourseInstances}.
 	 * It is bidirectional and its opposite is '{@link university.CourseInstances#getCourse <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Instances</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Instances</em>' reference list.
 	 * @see university.UniversityPackage#getCourses_Instances()
@@ -47,10 +43,6 @@ public interface Courses extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Credits</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Credits</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Credits</em>' attribute.
 	 * @see #setCredits(float)
@@ -73,10 +65,6 @@ public interface Courses extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Code</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
@@ -99,10 +87,6 @@ public interface Courses extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)

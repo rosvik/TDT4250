@@ -32,6 +32,7 @@ import university.UniversityPackage;
  * <ul>
  *   <li>{@link university.impl.ProgrammesImpl#getInstances <em>Instances</em>}</li>
  *   <li>{@link university.impl.ProgrammesImpl#getName <em>Name</em>}</li>
+ *   <li>{@link university.impl.ProgrammesImpl#getCode <em>Code</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +67,26 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CODE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected String code = CODE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,6 +148,29 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCode(String newCode) {
+		String oldCode = code;
+		code = newCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMMES__CODE, oldCode, code));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -163,6 +207,8 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 				return getInstances();
 			case UniversityPackage.PROGRAMMES__NAME:
 				return getName();
+			case UniversityPackage.PROGRAMMES__CODE:
+				return getCode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,6 +229,9 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 			case UniversityPackage.PROGRAMMES__NAME:
 				setName((String)newValue);
 				return;
+			case UniversityPackage.PROGRAMMES__CODE:
+				setCode((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,6 +250,9 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 			case UniversityPackage.PROGRAMMES__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case UniversityPackage.PROGRAMMES__CODE:
+				setCode(CODE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,6 +269,8 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 				return instances != null && !instances.isEmpty();
 			case UniversityPackage.PROGRAMMES__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case UniversityPackage.PROGRAMMES__CODE:
+				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -231,8 +285,10 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", code: ");
+		result.append(code);
 		result.append(')');
 		return result.toString();
 	}

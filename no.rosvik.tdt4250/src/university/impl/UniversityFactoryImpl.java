@@ -60,7 +60,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 			case UniversityPackage.PROGRAMME_INSTANCES: return createProgrammeInstances();
 			case UniversityPackage.COURSES: return createCourses();
 			case UniversityPackage.COURSE_INSTANCES: return createCourseInstances();
-			case UniversityPackage.PROGRAMME_SEMESTER: return createProgrammeSemester();
+			case UniversityPackage.PROGRAMME_SEMESTERS: return createProgrammeSemesters();
 			case UniversityPackage.SEMESTERS: return createSemesters();
 			case UniversityPackage.SPECIALIZATIONS: return createSpecializations();
 			default:
@@ -118,9 +118,9 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * @generated
 	 */
 	@Override
-	public ProgrammeSemester createProgrammeSemester() {
-		ProgrammeSemesterImpl programmeSemester = new ProgrammeSemesterImpl();
-		return programmeSemester;
+	public ProgrammeSemesters createProgrammeSemesters() {
+		ProgrammeSemestersImpl programmeSemesters = new ProgrammeSemestersImpl();
+		return programmeSemesters;
 	}
 
 	/**

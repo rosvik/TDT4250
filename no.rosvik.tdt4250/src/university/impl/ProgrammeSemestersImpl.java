@@ -19,24 +19,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import university.CourseInstances;
 import university.ProgrammeInstances;
-import university.ProgrammeSemester;
+import university.ProgrammeSemesters;
+import university.Semesters;
 import university.UniversityPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Programme Semester</b></em>'.
+ * An implementation of the model object '<em><b>Programme Semesters</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link university.impl.ProgrammeSemesterImpl#getProgrammeInstance <em>Programme Instance</em>}</li>
- *   <li>{@link university.impl.ProgrammeSemesterImpl#getCouseInstances <em>Couse Instances</em>}</li>
+ *   <li>{@link university.impl.ProgrammeSemestersImpl#getProgrammeInstance <em>Programme Instance</em>}</li>
+ *   <li>{@link university.impl.ProgrammeSemestersImpl#getCouseInstances <em>Couse Instances</em>}</li>
+ *   <li>{@link university.impl.ProgrammeSemestersImpl#getSemester <em>Semester</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implements ProgrammeSemester {
+public class ProgrammeSemestersImpl extends MinimalEObjectImpl.Container implements ProgrammeSemesters {
 	/**
 	 * The cached value of the '{@link #getProgrammeInstance() <em>Programme Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -58,11 +60,21 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	protected EList<CourseInstances> couseInstances;
 
 	/**
+	 * The cached value of the '{@link #getSemester() <em>Semester</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemester()
+	 * @generated
+	 * @ordered
+	 */
+	protected Semesters semester;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProgrammeSemesterImpl() {
+	protected ProgrammeSemestersImpl() {
 		super();
 	}
 
@@ -73,7 +85,7 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UniversityPackage.Literals.PROGRAMME_SEMESTER;
+		return UniversityPackage.Literals.PROGRAMME_SEMESTERS;
 	}
 
 	/**
@@ -88,7 +100,7 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 			programmeInstance = (ProgrammeInstances)eResolveProxy(oldProgrammeInstance);
 			if (programmeInstance != oldProgrammeInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE, oldProgrammeInstance, programmeInstance));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE, oldProgrammeInstance, programmeInstance));
 			}
 		}
 		return programmeInstance;
@@ -112,7 +124,7 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 		ProgrammeInstances oldProgrammeInstance = programmeInstance;
 		programmeInstance = newProgrammeInstance;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE, oldProgrammeInstance, newProgrammeInstance);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE, oldProgrammeInstance, newProgrammeInstance);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -135,7 +147,7 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE, newProgrammeInstance, newProgrammeInstance));
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE, newProgrammeInstance, newProgrammeInstance));
 	}
 
 	/**
@@ -146,7 +158,7 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public EList<CourseInstances> getCouseInstances() {
 		if (couseInstances == null) {
-			couseInstances = new EObjectResolvingEList<CourseInstances>(CourseInstances.class, this, UniversityPackage.PROGRAMME_SEMESTER__COUSE_INSTANCES);
+			couseInstances = new EObjectResolvingEList<CourseInstances>(CourseInstances.class, this, UniversityPackage.PROGRAMME_SEMESTERS__COUSE_INSTANCES);
 		}
 		return couseInstances;
 	}
@@ -157,9 +169,49 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public Semesters getSemester() {
+		if (semester != null && semester.eIsProxy()) {
+			InternalEObject oldSemester = (InternalEObject)semester;
+			semester = (Semesters)eResolveProxy(oldSemester);
+			if (semester != oldSemester) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.PROGRAMME_SEMESTERS__SEMESTER, oldSemester, semester));
+			}
+		}
+		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Semesters basicGetSemester() {
+		return semester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSemester(Semesters newSemester) {
+		Semesters oldSemester = semester;
+		semester = newSemester;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.PROGRAMME_SEMESTERS__SEMESTER, oldSemester, semester));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE:
+			case UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE:
 				if (programmeInstance != null)
 					msgs = ((InternalEObject)programmeInstance).eInverseRemove(this, UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS, ProgrammeInstances.class, msgs);
 				return basicSetProgrammeInstance((ProgrammeInstances)otherEnd, msgs);
@@ -175,7 +227,7 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE:
+			case UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE:
 				return basicSetProgrammeInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -189,11 +241,14 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE:
+			case UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE:
 				if (resolve) return getProgrammeInstance();
 				return basicGetProgrammeInstance();
-			case UniversityPackage.PROGRAMME_SEMESTER__COUSE_INSTANCES:
+			case UniversityPackage.PROGRAMME_SEMESTERS__COUSE_INSTANCES:
 				return getCouseInstances();
+			case UniversityPackage.PROGRAMME_SEMESTERS__SEMESTER:
+				if (resolve) return getSemester();
+				return basicGetSemester();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,12 +262,15 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE:
+			case UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE:
 				setProgrammeInstance((ProgrammeInstances)newValue);
 				return;
-			case UniversityPackage.PROGRAMME_SEMESTER__COUSE_INSTANCES:
+			case UniversityPackage.PROGRAMME_SEMESTERS__COUSE_INSTANCES:
 				getCouseInstances().clear();
 				getCouseInstances().addAll((Collection<? extends CourseInstances>)newValue);
+				return;
+			case UniversityPackage.PROGRAMME_SEMESTERS__SEMESTER:
+				setSemester((Semesters)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,11 +284,14 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE:
+			case UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE:
 				setProgrammeInstance((ProgrammeInstances)null);
 				return;
-			case UniversityPackage.PROGRAMME_SEMESTER__COUSE_INSTANCES:
+			case UniversityPackage.PROGRAMME_SEMESTERS__COUSE_INSTANCES:
 				getCouseInstances().clear();
+				return;
+			case UniversityPackage.PROGRAMME_SEMESTERS__SEMESTER:
+				setSemester((Semesters)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,12 +305,14 @@ public class ProgrammeSemesterImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE:
+			case UniversityPackage.PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE:
 				return programmeInstance != null;
-			case UniversityPackage.PROGRAMME_SEMESTER__COUSE_INSTANCES:
+			case UniversityPackage.PROGRAMME_SEMESTERS__COUSE_INSTANCES:
 				return couseInstances != null && !couseInstances.isEmpty();
+			case UniversityPackage.PROGRAMME_SEMESTERS__SEMESTER:
+				return semester != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ProgrammeSemesterImpl
+} //ProgrammeSemestersImpl
