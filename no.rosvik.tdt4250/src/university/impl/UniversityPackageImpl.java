@@ -332,6 +332,26 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * @generated
 	 */
 	@Override
+	public EAttribute getSemesters_Year() {
+		return (EAttribute)semestersEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSemesters_Season() {
+		return (EAttribute)semestersEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSpecializations() {
 		return specializationsEClass;
 	}
@@ -344,6 +364,16 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	@Override
 	public EReference getSpecializations_ProgrammeInstance() {
 		return (EReference)specializationsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSpecializations_Name() {
+		return (EAttribute)specializationsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -399,9 +429,12 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 
 		semestersEClass = createEClass(SEMESTERS);
 		createEReference(semestersEClass, SEMESTERS__SEMESTER_INSTANCES);
+		createEAttribute(semestersEClass, SEMESTERS__YEAR);
+		createEAttribute(semestersEClass, SEMESTERS__SEASON);
 
 		specializationsEClass = createEClass(SPECIALIZATIONS);
 		createEReference(specializationsEClass, SPECIALIZATIONS__PROGRAMME_INSTANCE);
+		createEAttribute(specializationsEClass, SPECIALIZATIONS__NAME);
 	}
 
 	/**
@@ -458,9 +491,12 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 
 		initEClass(semestersEClass, Semesters.class, "Semesters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSemesters_SemesterInstances(), this.getProgrammeSemester(), null, "semesterInstances", null, 0, -1, Semesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemesters_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Semesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemesters_Season(), ecorePackage.getEBoolean(), "season", null, 0, 1, Semesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationsEClass, Specializations.class, "Specializations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSpecializations_ProgrammeInstance(), this.getProgrammeInstances(), this.getProgrammeInstances_Specializations(), "programmeInstance", null, 1, 1, Specializations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSpecializations_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specializations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

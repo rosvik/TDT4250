@@ -12,7 +12,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="-1"
         eType="#//ProgrammeSemester" eOpposite="#//ProgrammeSemester/programmeInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
-        eType="#//Specializations"/>
+        eType="#//Specializations" eOpposite="#//Specializations/programmeInstance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Courses">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
@@ -34,9 +34,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Semesters">
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesterInstances" upperBound="-1"
         eType="#//ProgrammeSemester"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="season" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specializations">
     <eStructuralFeatures xsi:type="ecore:EReference" name="programmeInstance" lowerBound="1"
-        eType="#//ProgrammeInstances"/>
+        eType="#//ProgrammeInstances" eOpposite="#//ProgrammeInstances/specializations"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

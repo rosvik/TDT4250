@@ -30,9 +30,12 @@
     </genClasses>
     <genClasses ecoreClass="university.ecore#//Semesters">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Semesters/semesterInstances"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute university.ecore#//Semesters/year"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute university.ecore#//Semesters/season"/>
     </genClasses>
     <genClasses ecoreClass="university.ecore#//Specializations">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Specializations/programmeInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute university.ecore#//Specializations/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -324,13 +324,31 @@ public interface UniversityPackage extends EPackage {
 	int SEMESTERS__SEMESTER_INSTANCES = 0;
 
 	/**
+	 * The feature id for the '<em><b>Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTERS__YEAR = 1;
+
+	/**
+	 * The feature id for the '<em><b>Season</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTERS__SEASON = 2;
+
+	/**
 	 * The number of structural features of the '<em>Semesters</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTERS_FEATURE_COUNT = 1;
+	int SEMESTERS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Semesters</em>' class.
@@ -362,13 +380,22 @@ public interface UniversityPackage extends EPackage {
 	int SPECIALIZATIONS__PROGRAMME_INSTANCE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATIONS__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Specializations</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATIONS_FEATURE_COUNT = 1;
+	int SPECIALIZATIONS_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Specializations</em>' class.
@@ -584,6 +611,28 @@ public interface UniversityPackage extends EPackage {
 	EReference getSemesters_SemesterInstances();
 
 	/**
+	 * Returns the meta object for the attribute '{@link university.Semesters#getYear <em>Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Year</em>'.
+	 * @see university.Semesters#getYear()
+	 * @see #getSemesters()
+	 * @generated
+	 */
+	EAttribute getSemesters_Year();
+
+	/**
+	 * Returns the meta object for the attribute '{@link university.Semesters#isSeason <em>Season</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Season</em>'.
+	 * @see university.Semesters#isSeason()
+	 * @see #getSemesters()
+	 * @generated
+	 */
+	EAttribute getSemesters_Season();
+
+	/**
 	 * Returns the meta object for class '{@link university.Specializations <em>Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -603,6 +652,17 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSpecializations_ProgrammeInstance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link university.Specializations#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see university.Specializations#getName()
+	 * @see #getSpecializations()
+	 * @generated
+	 */
+	EAttribute getSpecializations_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -792,6 +852,22 @@ public interface UniversityPackage extends EPackage {
 		EReference SEMESTERS__SEMESTER_INSTANCES = eINSTANCE.getSemesters_SemesterInstances();
 
 		/**
+		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTERS__YEAR = eINSTANCE.getSemesters_Year();
+
+		/**
+		 * The meta object literal for the '<em><b>Season</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMESTERS__SEASON = eINSTANCE.getSemesters_Season();
+
+		/**
 		 * The meta object literal for the '{@link university.impl.SpecializationsImpl <em>Specializations</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -808,6 +884,14 @@ public interface UniversityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SPECIALIZATIONS__PROGRAMME_INSTANCE = eINSTANCE.getSpecializations_ProgrammeInstance();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPECIALIZATIONS__NAME = eINSTANCE.getSpecializations_Name();
 
 	}
 

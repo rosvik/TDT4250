@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}</li>
+ *   <li>{@link university.Specializations#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see university.UniversityPackage#getSpecializations()
@@ -44,5 +45,27 @@ public interface Specializations extends EObject {
 	 * @generated
 	 */
 	void setProgrammeInstance(ProgrammeInstances value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see university.UniversityPackage#getSpecializations_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link university.Specializations#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Specializations

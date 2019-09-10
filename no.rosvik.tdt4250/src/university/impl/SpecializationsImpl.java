@@ -24,6 +24,7 @@ import university.UniversityPackage;
  * </p>
  * <ul>
  *   <li>{@link university.impl.SpecializationsImpl#getProgrammeInstance <em>Programme Instance</em>}</li>
+ *   <li>{@link university.impl.SpecializationsImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +39,25 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected ProgrammeInstances programmeInstance;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +146,29 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.SPECIALIZATIONS__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
@@ -161,6 +204,8 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
 				if (resolve) return getProgrammeInstance();
 				return basicGetProgrammeInstance();
+			case UniversityPackage.SPECIALIZATIONS__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,6 +220,9 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
 				setProgrammeInstance((ProgrammeInstances)newValue);
+				return;
+			case UniversityPackage.SPECIALIZATIONS__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,6 +239,9 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
 				setProgrammeInstance((ProgrammeInstances)null);
 				return;
+			case UniversityPackage.SPECIALIZATIONS__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -205,8 +256,26 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
 				return programmeInstance != null;
+			case UniversityPackage.SPECIALIZATIONS__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SpecializationsImpl
