@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import university.CourseInstances;
@@ -18,6 +19,7 @@ import university.Semesters;
 import university.Specializations;
 import university.UniversityFactory;
 import university.UniversityPackage;
+import university.util.UniversityValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,6 +129,16 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 
 		// Initialize created meta-data
 		theUniversityPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theUniversityPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return UniversityValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theUniversityPackage.freeze();
@@ -500,6 +512,26 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (semestersEClass,
+		   source,
+		   new String[] {
+			   "constraints", "validYear"
+		   });
 	}
 
 } //UniversityPackageImpl

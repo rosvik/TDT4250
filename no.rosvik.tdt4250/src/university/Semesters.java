@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see university.UniversityPackage#getSemesters()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='validYear'"
  * @generated
  */
 public interface Semesters extends EObject {
