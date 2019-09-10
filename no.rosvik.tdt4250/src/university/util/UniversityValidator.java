@@ -172,29 +172,15 @@ public class UniversityValidator extends EObjectValidator {
 	/**
 	 * Validates the validYear constraint of '<em>Semesters</em>'.
 	 * <!-- begin-user-doc -->
+	 * Checks if the semester is from a year since NTNU was founded and year 2500.
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateSemesters_validYear(Semesters semesters, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "validYear", getObjectLabel(semesters, context) },
-						 new Object[] { semesters },
-						 context));
-			}
-			return false;
+		if (semesters.getYear() >= 1760 && semesters.getYear() <= 2500) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
