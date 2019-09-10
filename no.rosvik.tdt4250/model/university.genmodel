@@ -13,6 +13,7 @@
     <genClasses ecoreClass="university.ecore#//ProgrammeInstances">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeInstances/programme"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeInstances/semesters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeInstances/specializations"/>
     </genClasses>
     <genClasses ecoreClass="university.ecore#//Courses">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Courses/instances"/>
@@ -29,6 +30,9 @@
     </genClasses>
     <genClasses ecoreClass="university.ecore#//Semesters">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Semesters/semesterInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="university.ecore#//Specializations">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Specializations/programmeInstance"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
