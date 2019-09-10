@@ -1,4 +1,4 @@
-# TDT4250
+# Assignment in TDT4250 Avansert programvaredesign
 
 ## Model
 
@@ -23,12 +23,12 @@ In `UniversityValidator.java`:
 
 ```java
 /**
-    * Validates the validYear constraint of '<em>Semesters</em>'.
-    * <!-- begin-user-doc -->
-    * Checks if the semester is from a year since NTNU was founded and year 2500.
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+* Validates the validYear constraint of '<em>Semesters</em>'.
+* <!-- begin-user-doc -->
+* Checks if the semester is from a year since NTNU was founded and year 2500.
+* <!-- end-user-doc -->
+* @generated NOT
+*/
 public boolean validateSemesters_validYear(Semesters semesters, DiagnosticChain diagnostics, Map<Object, Object> context) {
     if (semesters.getYear() >= 1760 && semesters.getYear() <= 2500) {
         return true;
