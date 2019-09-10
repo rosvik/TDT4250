@@ -102,6 +102,12 @@ public class UniversitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case UniversityPackage.SPECIALIZATIONS: {
+				Specializations specializations = (Specializations)theEObject;
+				T result = caseSpecializations(specializations);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -193,6 +199,21 @@ public class UniversitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSemesters(Semesters object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Specializations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Specializations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpecializations(Specializations object) {
 		return null;
 	}
 

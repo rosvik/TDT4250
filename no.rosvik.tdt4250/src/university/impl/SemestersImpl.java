@@ -64,6 +64,7 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ProgrammeSemester> getSemesterInstances() {
 		if (semesterInstances == null) {
 			semesterInstances = new EObjectResolvingEList<ProgrammeSemester>(ProgrammeSemester.class, this, UniversityPackage.SEMESTERS__SEMESTER_INSTANCES);

@@ -76,6 +76,15 @@ public interface UniversityFactory extends EFactory {
 	Semesters createSemesters();
 
 	/**
+	 * Returns a new object of class '<em>Specializations</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Specializations</em>'.
+	 * @generated
+	 */
+	Specializations createSpecializations();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -91,6 +91,7 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ProgrammeInstances> getInstances() {
 		if (instances == null) {
 			instances = new EObjectWithInverseResolvingEList<ProgrammeInstances>(ProgrammeInstances.class, this, UniversityPackage.PROGRAMMES__INSTANCES, UniversityPackage.PROGRAMME_INSTANCES__PROGRAMME);
@@ -103,6 +104,7 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -112,6 +114,7 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

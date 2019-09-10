@@ -133,6 +133,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<CourseInstances> getInstances() {
 		if (instances == null) {
 			instances = new EObjectWithInverseResolvingEList<CourseInstances>(CourseInstances.class, this, UniversityPackage.COURSES__INSTANCES, UniversityPackage.COURSE_INSTANCES__COURSE);
@@ -145,6 +146,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public float getCredits() {
 		return credits;
 	}
@@ -154,6 +156,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCredits(float newCredits) {
 		float oldCredits = credits;
 		credits = newCredits;
@@ -166,6 +169,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -175,6 +179,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -187,6 +192,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -196,6 +202,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

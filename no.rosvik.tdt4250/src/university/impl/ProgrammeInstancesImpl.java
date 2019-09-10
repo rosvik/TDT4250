@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import university.ProgrammeInstances;
 import university.ProgrammeSemester;
 import university.Programmes;
+import university.Specializations;
 import university.UniversityPackage;
 
 /**
@@ -33,6 +34,7 @@ import university.UniversityPackage;
  * <ul>
  *   <li>{@link university.impl.ProgrammeInstancesImpl#getProgramme <em>Programme</em>}</li>
  *   <li>{@link university.impl.ProgrammeInstancesImpl#getSemesters <em>Semesters</em>}</li>
+ *   <li>{@link university.impl.ProgrammeInstancesImpl#getSpecializations <em>Specializations</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +61,16 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	protected EList<ProgrammeSemester> semesters;
 
 	/**
+	 * The cached value of the '{@link #getSpecializations() <em>Specializations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpecializations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Specializations> specializations;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -82,6 +94,7 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Programmes getProgramme() {
 		if (programme != null && programme.eIsProxy()) {
 			InternalEObject oldProgramme = (InternalEObject)programme;
@@ -123,6 +136,7 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setProgramme(Programmes newProgramme) {
 		if (newProgramme != programme) {
 			NotificationChain msgs = null;
@@ -142,11 +156,25 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ProgrammeSemester> getSemesters() {
 		if (semesters == null) {
 			semesters = new EObjectWithInverseResolvingEList<ProgrammeSemester>(ProgrammeSemester.class, this, UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS, UniversityPackage.PROGRAMME_SEMESTER__PROGRAMME_INSTANCE);
 		}
 		return semesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Specializations> getSpecializations() {
+		if (specializations == null) {
+			specializations = new EObjectWithInverseResolvingEList<Specializations>(Specializations.class, this, UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS, UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE);
+		}
+		return specializations;
 	}
 
 	/**
@@ -164,6 +192,8 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				return basicSetProgramme((Programmes)otherEnd, msgs);
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSemesters()).basicAdd(otherEnd, msgs);
+			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpecializations()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -180,6 +210,8 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				return basicSetProgramme(null, msgs);
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
 				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
+			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
+				return ((InternalEList<?>)getSpecializations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -197,6 +229,8 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				return basicGetProgramme();
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
 				return getSemesters();
+			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
+				return getSpecializations();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,6 +251,10 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				getSemesters().clear();
 				getSemesters().addAll((Collection<? extends ProgrammeSemester>)newValue);
 				return;
+			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
+				getSpecializations().clear();
+				getSpecializations().addAll((Collection<? extends Specializations>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -235,6 +273,9 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
 				getSemesters().clear();
 				return;
+			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
+				getSpecializations().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +292,8 @@ public class ProgrammeInstancesImpl extends MinimalEObjectImpl.Container impleme
 				return programme != null;
 			case UniversityPackage.PROGRAMME_INSTANCES__SEMESTERS:
 				return semesters != null && !semesters.isEmpty();
+			case UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS:
+				return specializations != null && !specializations.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

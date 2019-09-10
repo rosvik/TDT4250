@@ -15,6 +15,7 @@ import university.ProgrammeInstances;
 import university.ProgrammeSemester;
 import university.Programmes;
 import university.Semesters;
+import university.Specializations;
 import university.UniversityFactory;
 import university.UniversityPackage;
 
@@ -66,6 +67,13 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * @generated
 	 */
 	private EClass semestersEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass specializationsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -133,6 +141,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProgrammes() {
 		return programmesEClass;
 	}
@@ -142,6 +151,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgrammes_Instances() {
 		return (EReference)programmesEClass.getEStructuralFeatures().get(0);
 	}
@@ -151,6 +161,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProgrammes_Name() {
 		return (EAttribute)programmesEClass.getEStructuralFeatures().get(1);
 	}
@@ -160,6 +171,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProgrammeInstances() {
 		return programmeInstancesEClass;
 	}
@@ -169,6 +181,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgrammeInstances_Programme() {
 		return (EReference)programmeInstancesEClass.getEStructuralFeatures().get(0);
 	}
@@ -178,6 +191,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgrammeInstances_Semesters() {
 		return (EReference)programmeInstancesEClass.getEStructuralFeatures().get(1);
 	}
@@ -187,6 +201,17 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EReference getProgrammeInstances_Specializations() {
+		return (EReference)programmeInstancesEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCourses() {
 		return coursesEClass;
 	}
@@ -196,6 +221,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCourses_Instances() {
 		return (EReference)coursesEClass.getEStructuralFeatures().get(0);
 	}
@@ -205,6 +231,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCourses_Credits() {
 		return (EAttribute)coursesEClass.getEStructuralFeatures().get(1);
 	}
@@ -214,6 +241,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCourses_Code() {
 		return (EAttribute)coursesEClass.getEStructuralFeatures().get(2);
 	}
@@ -223,6 +251,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCourses_Name() {
 		return (EAttribute)coursesEClass.getEStructuralFeatures().get(3);
 	}
@@ -232,6 +261,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCourseInstances() {
 		return courseInstancesEClass;
 	}
@@ -241,6 +271,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCourseInstances_Course() {
 		return (EReference)courseInstancesEClass.getEStructuralFeatures().get(0);
 	}
@@ -250,6 +281,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProgrammeSemester() {
 		return programmeSemesterEClass;
 	}
@@ -259,6 +291,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgrammeSemester_ProgrammeInstance() {
 		return (EReference)programmeSemesterEClass.getEStructuralFeatures().get(0);
 	}
@@ -268,6 +301,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProgrammeSemester_CouseInstances() {
 		return (EReference)programmeSemesterEClass.getEStructuralFeatures().get(1);
 	}
@@ -277,6 +311,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSemesters() {
 		return semestersEClass;
 	}
@@ -286,6 +321,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemesters_SemesterInstances() {
 		return (EReference)semestersEClass.getEStructuralFeatures().get(0);
 	}
@@ -295,6 +331,27 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getSpecializations() {
+		return specializationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSpecializations_ProgrammeInstance() {
+		return (EReference)specializationsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public UniversityFactory getUniversityFactory() {
 		return (UniversityFactory)getEFactoryInstance();
 	}
@@ -325,6 +382,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 		programmeInstancesEClass = createEClass(PROGRAMME_INSTANCES);
 		createEReference(programmeInstancesEClass, PROGRAMME_INSTANCES__PROGRAMME);
 		createEReference(programmeInstancesEClass, PROGRAMME_INSTANCES__SEMESTERS);
+		createEReference(programmeInstancesEClass, PROGRAMME_INSTANCES__SPECIALIZATIONS);
 
 		coursesEClass = createEClass(COURSES);
 		createEReference(coursesEClass, COURSES__INSTANCES);
@@ -341,6 +399,9 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 
 		semestersEClass = createEClass(SEMESTERS);
 		createEReference(semestersEClass, SEMESTERS__SEMESTER_INSTANCES);
+
+		specializationsEClass = createEClass(SPECIALIZATIONS);
+		createEReference(specializationsEClass, SPECIALIZATIONS__PROGRAMME_INSTANCE);
 	}
 
 	/**
@@ -380,6 +441,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 		initEClass(programmeInstancesEClass, ProgrammeInstances.class, "ProgrammeInstances", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProgrammeInstances_Programme(), this.getProgrammes(), this.getProgrammes_Instances(), "programme", null, 1, 1, ProgrammeInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgrammeInstances_Semesters(), this.getProgrammeSemester(), this.getProgrammeSemester_ProgrammeInstance(), "semesters", null, 0, -1, ProgrammeInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgrammeInstances_Specializations(), this.getSpecializations(), this.getSpecializations_ProgrammeInstance(), "specializations", null, 0, -1, ProgrammeInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coursesEClass, Courses.class, "Courses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCourses_Instances(), this.getCourseInstances(), this.getCourseInstances_Course(), "instances", null, 0, -1, Courses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -396,6 +458,9 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 
 		initEClass(semestersEClass, Semesters.class, "Semesters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSemesters_SemesterInstances(), this.getProgrammeSemester(), null, "semesterInstances", null, 0, -1, Semesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(specializationsEClass, Specializations.class, "Specializations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSpecializations_ProgrammeInstance(), this.getProgrammeInstances(), this.getProgrammeInstances_Specializations(), "programmeInstance", null, 1, 1, Specializations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

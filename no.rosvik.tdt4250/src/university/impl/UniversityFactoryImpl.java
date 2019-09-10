@@ -62,6 +62,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 			case UniversityPackage.COURSE_INSTANCES: return createCourseInstances();
 			case UniversityPackage.PROGRAMME_SEMESTER: return createProgrammeSemester();
 			case UniversityPackage.SEMESTERS: return createSemesters();
+			case UniversityPackage.SPECIALIZATIONS: return createSpecializations();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -72,6 +73,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Programmes createProgrammes() {
 		ProgrammesImpl programmes = new ProgrammesImpl();
 		return programmes;
@@ -82,6 +84,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProgrammeInstances createProgrammeInstances() {
 		ProgrammeInstancesImpl programmeInstances = new ProgrammeInstancesImpl();
 		return programmeInstances;
@@ -92,6 +95,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Courses createCourses() {
 		CoursesImpl courses = new CoursesImpl();
 		return courses;
@@ -102,6 +106,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CourseInstances createCourseInstances() {
 		CourseInstancesImpl courseInstances = new CourseInstancesImpl();
 		return courseInstances;
@@ -112,6 +117,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ProgrammeSemester createProgrammeSemester() {
 		ProgrammeSemesterImpl programmeSemester = new ProgrammeSemesterImpl();
 		return programmeSemester;
@@ -122,6 +128,7 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Semesters createSemesters() {
 		SemestersImpl semesters = new SemestersImpl();
 		return semesters;
@@ -132,6 +139,18 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Specializations createSpecializations() {
+		SpecializationsImpl specializations = new SpecializationsImpl();
+		return specializations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public UniversityPackage getUniversityPackage() {
 		return (UniversityPackage)getEPackage();
 	}

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link university.ProgrammeInstances#getProgramme <em>Programme</em>}</li>
  *   <li>{@link university.ProgrammeInstances#getSemesters <em>Semesters</em>}</li>
+ *   <li>{@link university.ProgrammeInstances#getSpecializations <em>Specializations</em>}</li>
  * </ul>
  *
  * @see university.UniversityPackage#getProgrammeInstances()
@@ -69,5 +70,19 @@ public interface ProgrammeInstances extends EObject {
 	 * @generated
 	 */
 	EList<ProgrammeSemester> getSemesters();
+
+	/**
+	 * Returns the value of the '<em><b>Specializations</b></em>' reference list.
+	 * The list contents are of type {@link university.Specializations}.
+	 * It is bidirectional and its opposite is '{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Specializations</em>' reference list.
+	 * @see university.UniversityPackage#getProgrammeInstances_Specializations()
+	 * @see university.Specializations#getProgrammeInstance
+	 * @model opposite="programmeInstance"
+	 * @generated
+	 */
+	EList<Specializations> getSpecializations();
 
 } // ProgrammeInstances

@@ -131,13 +131,22 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_INSTANCES__SEMESTERS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Specializations</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME_INSTANCES__SPECIALIZATIONS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Programme Instances</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_INSTANCES_FEATURE_COUNT = 2;
+	int PROGRAMME_INSTANCES_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Programme Instances</em>' class.
@@ -334,6 +343,44 @@ public interface UniversityPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link university.impl.SpecializationsImpl <em>Specializations</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see university.impl.SpecializationsImpl
+	 * @see university.impl.UniversityPackageImpl#getSpecializations()
+	 * @generated
+	 */
+	int SPECIALIZATIONS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Programme Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATIONS__PROGRAMME_INSTANCE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Specializations</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATIONS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Specializations</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATIONS_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link university.Programmes <em>Programmes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +443,17 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProgrammeInstances_Semesters();
+
+	/**
+	 * Returns the meta object for the reference list '{@link university.ProgrammeInstances#getSpecializations <em>Specializations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Specializations</em>'.
+	 * @see university.ProgrammeInstances#getSpecializations()
+	 * @see #getProgrammeInstances()
+	 * @generated
+	 */
+	EReference getProgrammeInstances_Specializations();
 
 	/**
 	 * Returns the meta object for class '{@link university.Courses <em>Courses</em>}'.
@@ -526,6 +584,27 @@ public interface UniversityPackage extends EPackage {
 	EReference getSemesters_SemesterInstances();
 
 	/**
+	 * Returns the meta object for class '{@link university.Specializations <em>Specializations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Specializations</em>'.
+	 * @see university.Specializations
+	 * @generated
+	 */
+	EClass getSpecializations();
+
+	/**
+	 * Returns the meta object for the reference '{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Programme Instance</em>'.
+	 * @see university.Specializations#getProgrammeInstance()
+	 * @see #getSpecializations()
+	 * @generated
+	 */
+	EReference getSpecializations_ProgrammeInstance();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -599,6 +678,14 @@ public interface UniversityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROGRAMME_INSTANCES__SEMESTERS = eINSTANCE.getProgrammeInstances_Semesters();
+
+		/**
+		 * The meta object literal for the '<em><b>Specializations</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME_INSTANCES__SPECIALIZATIONS = eINSTANCE.getProgrammeInstances_Specializations();
 
 		/**
 		 * The meta object literal for the '{@link university.impl.CoursesImpl <em>Courses</em>}' class.
@@ -703,6 +790,24 @@ public interface UniversityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEMESTERS__SEMESTER_INSTANCES = eINSTANCE.getSemesters_SemesterInstances();
+
+		/**
+		 * The meta object literal for the '{@link university.impl.SpecializationsImpl <em>Specializations</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see university.impl.SpecializationsImpl
+		 * @see university.impl.UniversityPackageImpl#getSpecializations()
+		 * @generated
+		 */
+		EClass SPECIALIZATIONS = eINSTANCE.getSpecializations();
+
+		/**
+		 * The meta object literal for the '<em><b>Programme Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATIONS__PROGRAMME_INSTANCE = eINSTANCE.getSpecializations_ProgrammeInstance();
 
 	}
 

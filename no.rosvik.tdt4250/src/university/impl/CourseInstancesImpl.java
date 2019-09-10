@@ -63,6 +63,7 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Courses getCourse() {
 		if (course != null && course.eIsProxy()) {
 			InternalEObject oldCourse = (InternalEObject)course;
@@ -104,6 +105,7 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCourse(Courses newCourse) {
 		if (newCourse != course) {
 			NotificationChain msgs = null;
