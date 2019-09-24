@@ -4,6 +4,7 @@ package university;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -296,7 +297,7 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_SEMESTERS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Programme Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Programme Instance</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -305,13 +306,13 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Couse Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Slots</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_SEMESTERS__COUSE_INSTANCES = 1;
+	int PROGRAMME_SEMESTERS__SLOTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Semester</b></em>' reference.
@@ -341,6 +342,79 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_SEMESTERS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link university.impl.SlotImpl <em>Slot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see university.impl.SlotImpl
+	 * @see university.impl.UniversityPackageImpl#getSlot()
+	 * @generated
+	 */
+	int SLOT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Programme Semester</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__PROGRAMME_SEMESTER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Avaliable Courses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__AVALIABLE_COURSES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Points</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__POINTS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Slot Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__SLOT_TYPE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT__NAME = 4;
+
+	/**
+	 * The number of structural features of the '<em>Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Slot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SLOT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link university.impl.SemestersImpl <em>Semesters</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,7 +422,7 @@ public interface UniversityPackage extends EPackage {
 	 * @see university.impl.UniversityPackageImpl#getSemesters()
 	 * @generated
 	 */
-	int SEMESTERS = 5;
+	int SEMESTERS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Year</b></em>' attribute.
@@ -360,13 +434,13 @@ public interface UniversityPackage extends EPackage {
 	int SEMESTERS__YEAR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Season</b></em>' attribute.
+	 * The feature id for the '<em><b>Semester Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTERS__SEASON = 1;
+	int SEMESTERS__SEMESTER_TIME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Semesters</em>' class.
@@ -394,7 +468,7 @@ public interface UniversityPackage extends EPackage {
 	 * @see university.impl.UniversityPackageImpl#getSpecializations()
 	 * @generated
 	 */
-	int SPECIALIZATIONS = 6;
+	int SPECIALIZATIONS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Programme Instance</b></em>' reference.
@@ -431,6 +505,82 @@ public interface UniversityPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPECIALIZATIONS_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link university.impl.UniversityImpl <em>University</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see university.impl.UniversityImpl
+	 * @see university.impl.UniversityPackageImpl#getUniversity()
+	 * @generated
+	 */
+	int UNIVERSITY = 8;
+
+	/**
+	 * The feature id for the '<em><b>Programmes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY__PROGRAMMES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Courses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY__COURSES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Course Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY__COURSE_INSTANCES = 2;
+
+	/**
+	 * The number of structural features of the '<em>University</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>University</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNIVERSITY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link university.SemesterTime <em>Semester Time</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see university.SemesterTime
+	 * @see university.impl.UniversityPackageImpl#getSemesterTime()
+	 * @generated
+	 */
+	int SEMESTER_TIME = 9;
+
+	/**
+	 * The meta object id for the '{@link university.SlotType <em>Slot Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see university.SlotType
+	 * @see university.impl.UniversityPackageImpl#getSlotType()
+	 * @generated
+	 */
+	int SLOT_TYPE = 10;
 
 
 	/**
@@ -627,10 +777,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getProgrammeSemesters();
 
 	/**
-	 * Returns the meta object for the reference '{@link university.ProgrammeSemesters#getProgrammeInstance <em>Programme Instance</em>}'.
+	 * Returns the meta object for the reference list '{@link university.ProgrammeSemesters#getProgrammeInstance <em>Programme Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme Instance</em>'.
+	 * @return the meta object for the reference list '<em>Programme Instance</em>'.
 	 * @see university.ProgrammeSemesters#getProgrammeInstance()
 	 * @see #getProgrammeSemesters()
 	 * @generated
@@ -638,15 +788,15 @@ public interface UniversityPackage extends EPackage {
 	EReference getProgrammeSemesters_ProgrammeInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.ProgrammeSemesters#getCouseInstances <em>Couse Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link university.ProgrammeSemesters#getSlots <em>Slots</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Couse Instances</em>'.
-	 * @see university.ProgrammeSemesters#getCouseInstances()
+	 * @return the meta object for the reference list '<em>Slots</em>'.
+	 * @see university.ProgrammeSemesters#getSlots()
 	 * @see #getProgrammeSemesters()
 	 * @generated
 	 */
-	EReference getProgrammeSemesters_CouseInstances();
+	EReference getProgrammeSemesters_Slots();
 
 	/**
 	 * Returns the meta object for the reference '{@link university.ProgrammeSemesters#getSemester <em>Semester</em>}'.
@@ -658,6 +808,71 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProgrammeSemesters_Semester();
+
+	/**
+	 * Returns the meta object for class '{@link university.Slot <em>Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Slot</em>'.
+	 * @see university.Slot
+	 * @generated
+	 */
+	EClass getSlot();
+
+	/**
+	 * Returns the meta object for the reference '{@link university.Slot#getProgrammeSemester <em>Programme Semester</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Programme Semester</em>'.
+	 * @see university.Slot#getProgrammeSemester()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EReference getSlot_ProgrammeSemester();
+
+	/**
+	 * Returns the meta object for the reference list '{@link university.Slot#getAvaliableCourses <em>Avaliable Courses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Avaliable Courses</em>'.
+	 * @see university.Slot#getAvaliableCourses()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EReference getSlot_AvaliableCourses();
+
+	/**
+	 * Returns the meta object for the attribute '{@link university.Slot#getPoints <em>Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Points</em>'.
+	 * @see university.Slot#getPoints()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Points();
+
+	/**
+	 * Returns the meta object for the attribute '{@link university.Slot#getSlotType <em>Slot Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Slot Type</em>'.
+	 * @see university.Slot#getSlotType()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_SlotType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link university.Slot#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see university.Slot#getName()
+	 * @see #getSlot()
+	 * @generated
+	 */
+	EAttribute getSlot_Name();
 
 	/**
 	 * Returns the meta object for class '{@link university.Semesters <em>Semesters</em>}'.
@@ -681,15 +896,15 @@ public interface UniversityPackage extends EPackage {
 	EAttribute getSemesters_Year();
 
 	/**
-	 * Returns the meta object for the attribute '{@link university.Semesters#isSeason <em>Season</em>}'.
+	 * Returns the meta object for the attribute '{@link university.Semesters#getSemesterTime <em>Semester Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Season</em>'.
-	 * @see university.Semesters#isSeason()
+	 * @return the meta object for the attribute '<em>Semester Time</em>'.
+	 * @see university.Semesters#getSemesterTime()
 	 * @see #getSemesters()
 	 * @generated
 	 */
-	EAttribute getSemesters_Season();
+	EAttribute getSemesters_SemesterTime();
 
 	/**
 	 * Returns the meta object for class '{@link university.Specializations <em>Specializations</em>}'.
@@ -722,6 +937,69 @@ public interface UniversityPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSpecializations_Name();
+
+	/**
+	 * Returns the meta object for class '{@link university.University <em>University</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>University</em>'.
+	 * @see university.University
+	 * @generated
+	 */
+	EClass getUniversity();
+
+	/**
+	 * Returns the meta object for the reference list '{@link university.University#getProgrammes <em>Programmes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Programmes</em>'.
+	 * @see university.University#getProgrammes()
+	 * @see #getUniversity()
+	 * @generated
+	 */
+	EReference getUniversity_Programmes();
+
+	/**
+	 * Returns the meta object for the reference list '{@link university.University#getCourses <em>Courses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Courses</em>'.
+	 * @see university.University#getCourses()
+	 * @see #getUniversity()
+	 * @generated
+	 */
+	EReference getUniversity_Courses();
+
+	/**
+	 * Returns the meta object for the reference list '{@link university.University#getCourseInstances <em>Course Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Course Instances</em>'.
+	 * @see university.University#getCourseInstances()
+	 * @see #getUniversity()
+	 * @generated
+	 */
+	EReference getUniversity_CourseInstances();
+
+	/**
+	 * Returns the meta object for enum '{@link university.SemesterTime <em>Semester Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Semester Time</em>'.
+	 * @see university.SemesterTime
+	 * @generated
+	 */
+	EEnum getSemesterTime();
+
+	/**
+	 * Returns the meta object for enum '{@link university.SlotType <em>Slot Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Slot Type</em>'.
+	 * @see university.SlotType
+	 * @generated
+	 */
+	EEnum getSlotType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -901,7 +1179,7 @@ public interface UniversityPackage extends EPackage {
 		EClass PROGRAMME_SEMESTERS = eINSTANCE.getProgrammeSemesters();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Programme Instance</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -909,12 +1187,12 @@ public interface UniversityPackage extends EPackage {
 		EReference PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE = eINSTANCE.getProgrammeSemesters_ProgrammeInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Couse Instances</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Slots</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_SEMESTERS__COUSE_INSTANCES = eINSTANCE.getProgrammeSemesters_CouseInstances();
+		EReference PROGRAMME_SEMESTERS__SLOTS = eINSTANCE.getProgrammeSemesters_Slots();
 
 		/**
 		 * The meta object literal for the '<em><b>Semester</b></em>' reference feature.
@@ -923,6 +1201,56 @@ public interface UniversityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROGRAMME_SEMESTERS__SEMESTER = eINSTANCE.getProgrammeSemesters_Semester();
+
+		/**
+		 * The meta object literal for the '{@link university.impl.SlotImpl <em>Slot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see university.impl.SlotImpl
+		 * @see university.impl.UniversityPackageImpl#getSlot()
+		 * @generated
+		 */
+		EClass SLOT = eINSTANCE.getSlot();
+
+		/**
+		 * The meta object literal for the '<em><b>Programme Semester</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SLOT__PROGRAMME_SEMESTER = eINSTANCE.getSlot_ProgrammeSemester();
+
+		/**
+		 * The meta object literal for the '<em><b>Avaliable Courses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SLOT__AVALIABLE_COURSES = eINSTANCE.getSlot_AvaliableCourses();
+
+		/**
+		 * The meta object literal for the '<em><b>Points</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__POINTS = eINSTANCE.getSlot_Points();
+
+		/**
+		 * The meta object literal for the '<em><b>Slot Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__SLOT_TYPE = eINSTANCE.getSlot_SlotType();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SLOT__NAME = eINSTANCE.getSlot_Name();
 
 		/**
 		 * The meta object literal for the '{@link university.impl.SemestersImpl <em>Semesters</em>}' class.
@@ -943,12 +1271,12 @@ public interface UniversityPackage extends EPackage {
 		EAttribute SEMESTERS__YEAR = eINSTANCE.getSemesters_Year();
 
 		/**
-		 * The meta object literal for the '<em><b>Season</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Semester Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SEMESTERS__SEASON = eINSTANCE.getSemesters_Season();
+		EAttribute SEMESTERS__SEMESTER_TIME = eINSTANCE.getSemesters_SemesterTime();
 
 		/**
 		 * The meta object literal for the '{@link university.impl.SpecializationsImpl <em>Specializations</em>}' class.
@@ -975,6 +1303,60 @@ public interface UniversityPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SPECIALIZATIONS__NAME = eINSTANCE.getSpecializations_Name();
+
+		/**
+		 * The meta object literal for the '{@link university.impl.UniversityImpl <em>University</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see university.impl.UniversityImpl
+		 * @see university.impl.UniversityPackageImpl#getUniversity()
+		 * @generated
+		 */
+		EClass UNIVERSITY = eINSTANCE.getUniversity();
+
+		/**
+		 * The meta object literal for the '<em><b>Programmes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIVERSITY__PROGRAMMES = eINSTANCE.getUniversity_Programmes();
+
+		/**
+		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIVERSITY__COURSES = eINSTANCE.getUniversity_Courses();
+
+		/**
+		 * The meta object literal for the '<em><b>Course Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNIVERSITY__COURSE_INSTANCES = eINSTANCE.getUniversity_CourseInstances();
+
+		/**
+		 * The meta object literal for the '{@link university.SemesterTime <em>Semester Time</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see university.SemesterTime
+		 * @see university.impl.UniversityPackageImpl#getSemesterTime()
+		 * @generated
+		 */
+		EEnum SEMESTER_TIME = eINSTANCE.getSemesterTime();
+
+		/**
+		 * The meta object literal for the '{@link university.SlotType <em>Slot Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see university.SlotType
+		 * @see university.impl.UniversityPackageImpl#getSlotType()
+		 * @generated
+		 */
+		EEnum SLOT_TYPE = eINSTANCE.getSlotType();
 
 	}
 

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link university.Semesters#getYear <em>Year</em>}</li>
- *   <li>{@link university.Semesters#isSeason <em>Season</em>}</li>
+ *   <li>{@link university.Semesters#getSemesterTime <em>Semester Time</em>}</li>
  * </ul>
  *
  * @see university.UniversityPackage#getSemesters()
@@ -45,25 +45,28 @@ public interface Semesters extends EObject {
 	void setYear(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Season</b></em>' attribute.
+	 * Returns the value of the '<em><b>Semester Time</b></em>' attribute.
+	 * The literals are from the enumeration {@link university.SemesterTime}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Season</em>' attribute.
-	 * @see #setSeason(boolean)
-	 * @see university.UniversityPackage#getSemesters_Season()
+	 * @return the value of the '<em>Semester Time</em>' attribute.
+	 * @see university.SemesterTime
+	 * @see #setSemesterTime(SemesterTime)
+	 * @see university.UniversityPackage#getSemesters_SemesterTime()
 	 * @model
 	 * @generated
 	 */
-	boolean isSeason();
+	SemesterTime getSemesterTime();
 
 	/**
-	 * Sets the value of the '{@link university.Semesters#isSeason <em>Season</em>}' attribute.
+	 * Sets the value of the '{@link university.Semesters#getSemesterTime <em>Semester Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Season</em>' attribute.
-	 * @see #isSeason()
+	 * @param value the new value of the '<em>Semester Time</em>' attribute.
+	 * @see university.SemesterTime
+	 * @see #getSemesterTime()
 	 * @generated
 	 */
-	void setSeason(boolean value);
+	void setSemesterTime(SemesterTime value);
 
 } // Semesters

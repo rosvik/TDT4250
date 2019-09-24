@@ -88,12 +88,20 @@ public class UniversityAdapterFactory extends AdapterFactoryImpl {
 				return createProgrammeSemestersAdapter();
 			}
 			@Override
+			public Adapter caseSlot(Slot object) {
+				return createSlotAdapter();
+			}
+			@Override
 			public Adapter caseSemesters(Semesters object) {
 				return createSemestersAdapter();
 			}
 			@Override
 			public Adapter caseSpecializations(Specializations object) {
 				return createSpecializationsAdapter();
+			}
+			@Override
+			public Adapter caseUniversity(University object) {
+				return createUniversityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -186,6 +194,20 @@ public class UniversityAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link university.Slot <em>Slot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see university.Slot
+	 * @generated
+	 */
+	public Adapter createSlotAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link university.Semesters <em>Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -210,6 +232,20 @@ public class UniversityAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSpecializationsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link university.University <em>University</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see university.University
+	 * @generated
+	 */
+	public Adapter createUniversityAdapter() {
 		return null;
 	}
 

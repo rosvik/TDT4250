@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import university.SemesterTime;
 import university.Semesters;
 import university.UniversityPackage;
 
@@ -21,7 +22,7 @@ import university.UniversityPackage;
  * </p>
  * <ul>
  *   <li>{@link university.impl.SemestersImpl#getYear <em>Year</em>}</li>
- *   <li>{@link university.impl.SemestersImpl#isSeason <em>Season</em>}</li>
+ *   <li>{@link university.impl.SemestersImpl#getSemesterTime <em>Semester Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,24 +49,24 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	protected int year = YEAR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isSeason() <em>Season</em>}' attribute.
+	 * The default value of the '{@link #getSemesterTime() <em>Semester Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSeason()
+	 * @see #getSemesterTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean SEASON_EDEFAULT = false;
+	protected static final SemesterTime SEMESTER_TIME_EDEFAULT = SemesterTime.FALL;
 
 	/**
-	 * The cached value of the '{@link #isSeason() <em>Season</em>}' attribute.
+	 * The cached value of the '{@link #getSemesterTime() <em>Semester Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isSeason()
+	 * @see #getSemesterTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean season = SEASON_EDEFAULT;
+	protected SemesterTime semesterTime = SEMESTER_TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +116,8 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * @generated
 	 */
 	@Override
-	public boolean isSeason() {
-		return season;
+	public SemesterTime getSemesterTime() {
+		return semesterTime;
 	}
 
 	/**
@@ -125,11 +126,11 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * @generated
 	 */
 	@Override
-	public void setSeason(boolean newSeason) {
-		boolean oldSeason = season;
-		season = newSeason;
+	public void setSemesterTime(SemesterTime newSemesterTime) {
+		SemesterTime oldSemesterTime = semesterTime;
+		semesterTime = newSemesterTime == null ? SEMESTER_TIME_EDEFAULT : newSemesterTime;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.SEMESTERS__SEASON, oldSeason, season));
+			eNotify(new ENotificationImpl(this, Notification.SET, UniversityPackage.SEMESTERS__SEMESTER_TIME, oldSemesterTime, semesterTime));
 	}
 
 	/**
@@ -142,8 +143,8 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 		switch (featureID) {
 			case UniversityPackage.SEMESTERS__YEAR:
 				return getYear();
-			case UniversityPackage.SEMESTERS__SEASON:
-				return isSeason();
+			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
+				return getSemesterTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,8 +160,8 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 			case UniversityPackage.SEMESTERS__YEAR:
 				setYear((Integer)newValue);
 				return;
-			case UniversityPackage.SEMESTERS__SEASON:
-				setSeason((Boolean)newValue);
+			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
+				setSemesterTime((SemesterTime)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,8 +178,8 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 			case UniversityPackage.SEMESTERS__YEAR:
 				setYear(YEAR_EDEFAULT);
 				return;
-			case UniversityPackage.SEMESTERS__SEASON:
-				setSeason(SEASON_EDEFAULT);
+			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
+				setSemesterTime(SEMESTER_TIME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -194,8 +195,8 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 		switch (featureID) {
 			case UniversityPackage.SEMESTERS__YEAR:
 				return year != YEAR_EDEFAULT;
-			case UniversityPackage.SEMESTERS__SEASON:
-				return season != SEASON_EDEFAULT;
+			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
+				return semesterTime != SEMESTER_TIME_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,8 +213,8 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (year: ");
 		result.append(year);
-		result.append(", season: ");
-		result.append(season);
+		result.append(", semesterTime: ");
+		result.append(semesterTime);
 		result.append(')');
 		return result.toString();
 	}

@@ -3,6 +3,7 @@
 package university.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -61,10 +62,46 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 			case UniversityPackage.COURSES: return createCourses();
 			case UniversityPackage.COURSE_INSTANCES: return createCourseInstances();
 			case UniversityPackage.PROGRAMME_SEMESTERS: return createProgrammeSemesters();
+			case UniversityPackage.SLOT: return createSlot();
 			case UniversityPackage.SEMESTERS: return createSemesters();
 			case UniversityPackage.SPECIALIZATIONS: return createSpecializations();
+			case UniversityPackage.UNIVERSITY: return createUniversity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case UniversityPackage.SEMESTER_TIME:
+				return createSemesterTimeFromString(eDataType, initialValue);
+			case UniversityPackage.SLOT_TYPE:
+				return createSlotTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case UniversityPackage.SEMESTER_TIME:
+				return convertSemesterTimeToString(eDataType, instanceValue);
+			case UniversityPackage.SLOT_TYPE:
+				return convertSlotTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -129,6 +166,17 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	 * @generated
 	 */
 	@Override
+	public Slot createSlot() {
+		SlotImpl slot = new SlotImpl();
+		return slot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Semesters createSemesters() {
 		SemestersImpl semesters = new SemestersImpl();
 		return semesters;
@@ -143,6 +191,57 @@ public class UniversityFactoryImpl extends EFactoryImpl implements UniversityFac
 	public Specializations createSpecializations() {
 		SpecializationsImpl specializations = new SpecializationsImpl();
 		return specializations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public University createUniversity() {
+		UniversityImpl university = new UniversityImpl();
+		return university;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SemesterTime createSemesterTimeFromString(EDataType eDataType, String initialValue) {
+		SemesterTime result = SemesterTime.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSemesterTimeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SlotType createSlotTypeFromString(EDataType eDataType, String initialValue) {
+		SlotType result = SlotType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSlotTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

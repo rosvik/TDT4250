@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link university.ProgrammeSemesters#getProgrammeInstance <em>Programme Instance</em>}</li>
- *   <li>{@link university.ProgrammeSemesters#getCouseInstances <em>Couse Instances</em>}</li>
+ *   <li>{@link university.ProgrammeSemesters#getSlots <em>Slots</em>}</li>
  *   <li>{@link university.ProgrammeSemesters#getSemester <em>Semester</em>}</li>
  * </ul>
  *
@@ -26,40 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ProgrammeSemesters extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Programme Instance</b></em>' reference.
+	 * Returns the value of the '<em><b>Programme Instance</b></em>' reference list.
+	 * The list contents are of type {@link university.ProgrammeInstances}.
 	 * It is bidirectional and its opposite is '{@link university.ProgrammeInstances#getSemesters <em>Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Programme Instance</em>' reference.
-	 * @see #setProgrammeInstance(ProgrammeInstances)
+	 * @return the value of the '<em>Programme Instance</em>' reference list.
 	 * @see university.UniversityPackage#getProgrammeSemesters_ProgrammeInstance()
 	 * @see university.ProgrammeInstances#getSemesters
 	 * @model opposite="semesters"
 	 * @generated
 	 */
-	ProgrammeInstances getProgrammeInstance();
+	EList<ProgrammeInstances> getProgrammeInstance();
 
 	/**
-	 * Sets the value of the '{@link university.ProgrammeSemesters#getProgrammeInstance <em>Programme Instance</em>}' reference.
+	 * Returns the value of the '<em><b>Slots</b></em>' reference list.
+	 * The list contents are of type {@link university.Slot}.
+	 * It is bidirectional and its opposite is '{@link university.Slot#getProgrammeSemester <em>Programme Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Programme Instance</em>' reference.
-	 * @see #getProgrammeInstance()
+	 * @return the value of the '<em>Slots</em>' reference list.
+	 * @see university.UniversityPackage#getProgrammeSemesters_Slots()
+	 * @see university.Slot#getProgrammeSemester
+	 * @model opposite="programmeSemester"
 	 * @generated
 	 */
-	void setProgrammeInstance(ProgrammeInstances value);
-
-	/**
-	 * Returns the value of the '<em><b>Couse Instances</b></em>' reference list.
-	 * The list contents are of type {@link university.CourseInstances}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Couse Instances</em>' reference list.
-	 * @see university.UniversityPackage#getProgrammeSemesters_CouseInstances()
-	 * @model
-	 * @generated
-	 */
-	EList<CourseInstances> getCouseInstances();
+	EList<Slot> getSlots();
 
 	/**
 	 * Returns the value of the '<em><b>Semester</b></em>' reference.

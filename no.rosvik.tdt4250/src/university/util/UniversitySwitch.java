@@ -96,6 +96,12 @@ public class UniversitySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case UniversityPackage.SLOT: {
+				Slot slot = (Slot)theEObject;
+				T result = caseSlot(slot);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case UniversityPackage.SEMESTERS: {
 				Semesters semesters = (Semesters)theEObject;
 				T result = caseSemesters(semesters);
@@ -105,6 +111,12 @@ public class UniversitySwitch<T> extends Switch<T> {
 			case UniversityPackage.SPECIALIZATIONS: {
 				Specializations specializations = (Specializations)theEObject;
 				T result = caseSpecializations(specializations);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case UniversityPackage.UNIVERSITY: {
+				University university = (University)theEObject;
+				T result = caseUniversity(university);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -188,6 +200,21 @@ public class UniversitySwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Slot</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSlot(Slot object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Semesters</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -214,6 +241,21 @@ public class UniversitySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSpecializations(Specializations object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>University</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>University</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUniversity(University object) {
 		return null;
 	}
 

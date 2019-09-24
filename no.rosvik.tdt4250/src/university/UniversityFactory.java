@@ -67,6 +67,15 @@ public interface UniversityFactory extends EFactory {
 	ProgrammeSemesters createProgrammeSemesters();
 
 	/**
+	 * Returns a new object of class '<em>Slot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Slot</em>'.
+	 * @generated
+	 */
+	Slot createSlot();
+
+	/**
 	 * Returns a new object of class '<em>Semesters</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +92,15 @@ public interface UniversityFactory extends EFactory {
 	 * @generated
 	 */
 	Specializations createSpecializations();
+
+	/**
+	 * Returns a new object of class '<em>University</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>University</em>'.
+	 * @generated
+	 */
+	University createUniversity();
 
 	/**
 	 * Returns the package supported by this factory.

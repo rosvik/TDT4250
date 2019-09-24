@@ -4,6 +4,7 @@ package university.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -15,8 +16,12 @@ import university.Courses;
 import university.ProgrammeInstances;
 import university.ProgrammeSemesters;
 import university.Programmes;
+import university.SemesterTime;
 import university.Semesters;
+import university.Slot;
+import university.SlotType;
 import university.Specializations;
+import university.University;
 import university.UniversityFactory;
 import university.UniversityPackage;
 
@@ -69,6 +74,13 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass slotEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass semestersEClass = null;
 
 	/**
@@ -77,6 +89,27 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * @generated
 	 */
 	private EClass specializationsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass universityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum semesterTimeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum slotTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -345,7 +378,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * @generated
 	 */
 	@Override
-	public EReference getProgrammeSemesters_CouseInstances() {
+	public EReference getProgrammeSemesters_Slots() {
 		return (EReference)programmeSemestersEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -357,6 +390,66 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	@Override
 	public EReference getProgrammeSemesters_Semester() {
 		return (EReference)programmeSemestersEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSlot() {
+		return slotEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSlot_ProgrammeSemester() {
+		return (EReference)slotEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSlot_AvaliableCourses() {
+		return (EReference)slotEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_Points() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_SlotType() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSlot_Name() {
+		return (EAttribute)slotEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -385,7 +478,7 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSemesters_Season() {
+	public EAttribute getSemesters_SemesterTime() {
 		return (EAttribute)semestersEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -417,6 +510,66 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 	@Override
 	public EAttribute getSpecializations_Name() {
 		return (EAttribute)specializationsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUniversity() {
+		return universityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUniversity_Programmes() {
+		return (EReference)universityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUniversity_Courses() {
+		return (EReference)universityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUniversity_CourseInstances() {
+		return (EReference)universityEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getSemesterTime() {
+		return semesterTimeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getSlotType() {
+		return slotTypeEEnum;
 	}
 
 	/**
@@ -471,16 +624,32 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 
 		programmeSemestersEClass = createEClass(PROGRAMME_SEMESTERS);
 		createEReference(programmeSemestersEClass, PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE);
-		createEReference(programmeSemestersEClass, PROGRAMME_SEMESTERS__COUSE_INSTANCES);
+		createEReference(programmeSemestersEClass, PROGRAMME_SEMESTERS__SLOTS);
 		createEReference(programmeSemestersEClass, PROGRAMME_SEMESTERS__SEMESTER);
+
+		slotEClass = createEClass(SLOT);
+		createEReference(slotEClass, SLOT__PROGRAMME_SEMESTER);
+		createEReference(slotEClass, SLOT__AVALIABLE_COURSES);
+		createEAttribute(slotEClass, SLOT__POINTS);
+		createEAttribute(slotEClass, SLOT__SLOT_TYPE);
+		createEAttribute(slotEClass, SLOT__NAME);
 
 		semestersEClass = createEClass(SEMESTERS);
 		createEAttribute(semestersEClass, SEMESTERS__YEAR);
-		createEAttribute(semestersEClass, SEMESTERS__SEASON);
+		createEAttribute(semestersEClass, SEMESTERS__SEMESTER_TIME);
 
 		specializationsEClass = createEClass(SPECIALIZATIONS);
 		createEReference(specializationsEClass, SPECIALIZATIONS__PROGRAMME_INSTANCE);
 		createEAttribute(specializationsEClass, SPECIALIZATIONS__NAME);
+
+		universityEClass = createEClass(UNIVERSITY);
+		createEReference(universityEClass, UNIVERSITY__PROGRAMMES);
+		createEReference(universityEClass, UNIVERSITY__COURSES);
+		createEReference(universityEClass, UNIVERSITY__COURSE_INSTANCES);
+
+		// Create enums
+		semesterTimeEEnum = createEEnum(SEMESTER_TIME);
+		slotTypeEEnum = createEEnum(SLOT_TYPE);
 	}
 
 	/**
@@ -535,17 +704,39 @@ public class UniversityPackageImpl extends EPackageImpl implements UniversityPac
 		initEReference(getCourseInstances_Semester(), this.getSemesters(), null, "semester", null, 1, 1, CourseInstances.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programmeSemestersEClass, ProgrammeSemesters.class, "ProgrammeSemesters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProgrammeSemesters_ProgrammeInstance(), this.getProgrammeInstances(), this.getProgrammeInstances_Semesters(), "programmeInstance", null, 0, 1, ProgrammeSemesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProgrammeSemesters_CouseInstances(), this.getCourseInstances(), null, "couseInstances", null, 0, -1, ProgrammeSemesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgrammeSemesters_ProgrammeInstance(), this.getProgrammeInstances(), this.getProgrammeInstances_Semesters(), "programmeInstance", null, 0, -1, ProgrammeSemesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgrammeSemesters_Slots(), this.getSlot(), this.getSlot_ProgrammeSemester(), "slots", null, 0, -1, ProgrammeSemesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgrammeSemesters_Semester(), this.getSemesters(), null, "semester", null, 1, 1, ProgrammeSemesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(slotEClass, Slot.class, "Slot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSlot_ProgrammeSemester(), this.getProgrammeSemesters(), this.getProgrammeSemesters_Slots(), "programmeSemester", null, 1, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSlot_AvaliableCourses(), this.getCourseInstances(), null, "avaliableCourses", null, 0, -1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Points(), ecorePackage.getEInt(), "points", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_SlotType(), this.getSlotType(), "slotType", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSlot_Name(), ecorePackage.getEString(), "name", null, 0, 1, Slot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semestersEClass, Semesters.class, "Semesters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSemesters_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Semesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSemesters_Season(), ecorePackage.getEBoolean(), "season", null, 0, 1, Semesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemesters_SemesterTime(), this.getSemesterTime(), "semesterTime", null, 0, 1, Semesters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationsEClass, Specializations.class, "Specializations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSpecializations_ProgrammeInstance(), this.getProgrammeInstances(), this.getProgrammeInstances_Specializations(), "programmeInstance", null, 1, 1, Specializations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSpecializations_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specializations.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(universityEClass, University.class, "University", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUniversity_Programmes(), this.getProgrammes(), null, "programmes", null, 0, -1, University.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUniversity_Courses(), this.getCourses(), null, "courses", null, 0, -1, University.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUniversity_CourseInstances(), this.getCourseInstances(), null, "courseInstances", null, 0, -1, University.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(semesterTimeEEnum, SemesterTime.class, "SemesterTime");
+		addEEnumLiteral(semesterTimeEEnum, SemesterTime.FALL);
+		addEEnumLiteral(semesterTimeEEnum, SemesterTime.SPRING);
+
+		initEEnum(slotTypeEEnum, SlotType.class, "SlotType");
+		addEEnumLiteral(slotTypeEEnum, SlotType.O);
+		addEEnumLiteral(slotTypeEEnum, SlotType.V);
+		addEEnumLiteral(slotTypeEEnum, SlotType.V2);
 
 		// Create resource
 		createResource(eNS_URI);

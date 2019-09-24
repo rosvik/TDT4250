@@ -3,8 +3,6 @@
 package university.util;
 
 import java.util.Map;
-
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -96,10 +94,18 @@ public class UniversityValidator extends EObjectValidator {
 				return validateCourseInstances((CourseInstances)value, diagnostics, context);
 			case UniversityPackage.PROGRAMME_SEMESTERS:
 				return validateProgrammeSemesters((ProgrammeSemesters)value, diagnostics, context);
+			case UniversityPackage.SLOT:
+				return validateSlot((Slot)value, diagnostics, context);
 			case UniversityPackage.SEMESTERS:
 				return validateSemesters((Semesters)value, diagnostics, context);
 			case UniversityPackage.SPECIALIZATIONS:
 				return validateSpecializations((Specializations)value, diagnostics, context);
+			case UniversityPackage.UNIVERSITY:
+				return validateUniversity((University)value, diagnostics, context);
+			case UniversityPackage.SEMESTER_TIME:
+				return validateSemesterTime((SemesterTime)value, diagnostics, context);
+			case UniversityPackage.SLOT_TYPE:
+				return validateSlotType((SlotType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -155,6 +161,15 @@ public class UniversityValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateSlot(Slot slot, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(slot, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateSemesters(Semesters semesters, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(semesters, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(semesters, diagnostics, context);
@@ -190,6 +205,33 @@ public class UniversityValidator extends EObjectValidator {
 	 */
 	public boolean validateSpecializations(Specializations specializations, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(specializations, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUniversity(University university, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(university, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemesterTime(SemesterTime semesterTime, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSlotType(SlotType slotType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**
