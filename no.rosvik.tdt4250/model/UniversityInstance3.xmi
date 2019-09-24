@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uni:University
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:uni="no.rosvik.uni.test"
+    xsi:schemaLocation="no.rosvik.uni.test university.ecore">
+  <programmes
+      name="Datateknologi"
+      code="MTDT">
+    <instances
+        startYear="2016">
+      <programmeSemesters/>
+    </instances>
+  </programmes>
+  <semesters
+      year="2016"
+      semesterTime="Spring"/>
+</uni:University>
