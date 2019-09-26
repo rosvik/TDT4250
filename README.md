@@ -6,9 +6,12 @@
 
 The model is built with a few classes that have a general class and an instance class. The instance classes are meant to represent individual years that the classes are being used.
 
+- University: Top-level object containing programmes, courses and semesters.
 - Progammes: A study programme in general. E.g. code="MTDT" and name="Datateknologi"
 - ProgrammeInstances: A programme instance for a specific year. E.g. MTDT with startDate 2016
+- Specializations: If a programme has specializations, this object will contain the semesters that it has an affect on.
 - ProgrammeSemesters: The individual semesters that a ProgrammeInstance is made of. E.g. the spring 2019 semester for MTDT 2016.
+- Slot: A slot decides which courses a ProgrammeSemester could be made up of. 
 - Semesters: A semester in general. CourseInstances and ProgrammeSemesters are linked to a semester, but a semester is not dependent on any programme or course. E.g. spring 2019
 - Courses: A course in general with it's code, name and number of credits. E.g. TDT4250
 - CourseInstances: A course in a specific semester. E.g. TDT4250 for spring 2019.
