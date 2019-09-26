@@ -10,11 +10,24 @@
       code="MTDT">
     <instances
         startYear="2016">
-      <programmeSemesters/>
+      <programmeSemesters
+          semester="//@semesters.0">
+        <slots
+            avaliableCourses="//@courses.0/@instances.0"
+            points="30"
+            name="Obligatorisk"/>
+      </programmeSemesters>
     </instances>
   </programmes>
+  <courses credits="7.5"
+      code="TDT4100"
+      name="Objektorientert Programmering">
+    <instances
+        semester="//@semesters.0"/>
+  </courses>
   <semesters
-      year="2016"/>
+      year="2016"
+      programmeSemesters="//@programmes.0/@instances.0/@programmeSemesters.0"/>
   <semesters
       year="2017"
       semesterTime="Spring"/>
