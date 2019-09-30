@@ -1,4 +1,4 @@
-# Assigments in TDT4250 - Advanced Software Design
+# Assigments in TDT4250 - Advanced software design
 
 ### [Assignment1](assignment1/)
 
