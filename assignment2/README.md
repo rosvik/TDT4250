@@ -1,5 +1,16 @@
 # Assignment 2
 
+## Running
+
+Running the project:
+
+1. Open `launch.bndrun` in `no.rosvik.tdtd4250.converter.servlet`
+2. Click *Resolve*
+3. Click *Run OSGi*
+
+You can now do conversions in the Gogo shell, or by visiting [localhost:8080/unit/[conversionName]?q=[query]](http://localhost:8080/unit/poundtokilo?q=10)
+
+
 ## Structure
 
 This assignment is based on the [example project](https://gitlab.stud.idi.ntnu.no/TDT4250/examples/tree/master/dict-ws) that has been used in lectures. There are 5 OSGi Bnd projects in addition to the workspace and two built in converters.
@@ -13,7 +24,7 @@ This assignment is based on the [example project](https://gitlab.stud.idi.ntnu.n
 There are two built in converters:
 
 - **celciustofahrenheit**: [localhost:8080/unit/celciustofahrenheit?q=25](http://localhost:8080/unit/celciustofahrenheit?q=25)
-- **poundtokilo/**: [localhost:8080/unit/poundtokilo?q=10](http://localhost:8080/unit/poundtokilo?q=10)
+- **poundtokilo**: [localhost:8080/unit/poundtokilo?q=10](http://localhost:8080/unit/poundtokilo?q=10)
 
 ## Gogo
 
@@ -27,4 +38,3 @@ There are four commands for the [Gogo](https://enroute.osgi.org/FAQ/500-gogo.htm
 	- `g! unit:add [conversionName] "[formula]"` (Example: `g! unit:add hundredTimes "q*100"`)
 - **remove**: Remove manually added conversion:
 	- `g! unit:remove [conversionName]`
-
