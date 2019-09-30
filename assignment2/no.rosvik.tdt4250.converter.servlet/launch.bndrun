@@ -16,7 +16,8 @@
 	bnd.identity;id='no.rosvik.tdt4250.converter.kmtomiles',\
 	bnd.identity;id='no.rosvik.tdt4250.converter.util',\
 	bnd.identity;id='no.rosvik.tdt4250.converter.gogo',\
-	bnd.identity;id='no.rosvik.tdt4250.converter.fahrenheittocelcius'
+	bnd.identity;id='no.rosvik.tdt4250.converter.poundtokilo',\
+	bnd.identity;id='no.rosvik.tdt4250.converter.celciustofahrenheit'
 -runbundles: \
 	no.rosvik.tdt4250.converter.api;version=snapshot,\
 	no.rosvik.tdt4250.converter.servlet;version=snapshot,\
@@ -30,4 +31,5 @@
 	no.rosvik.tdt4250.converter.util;version=snapshot,\
 	no.rosvik.tdt4250.converter.gogo;version=snapshot,\
 	org.apache.felix.configadmin;version='[1.9.8,1.9.9)',\
-	no.rosvik.tdt4250.converter.fahrenheittocelcius;version=snapshot
+	no.rosvik.tdt4250.converter.poundtokilo;version=snapshot,\
+	no.rosvik.tdt4250.converter.celciustofahrenheit;version=snapshot
