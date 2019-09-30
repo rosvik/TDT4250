@@ -1,4 +1,4 @@
-# Assignment in TDT4250 Avansert programvaredesign
+# Assignment 1
 
 ## Model
 
@@ -20,7 +20,7 @@ An example is the progamme MTDT (with class Programmes) and MTDT 2019 (with clas
 
 ## Constraints
 
-A simple constraint is added to the semester year via Java code. It checks if the semester is between the year NTNU was founded and year 2500.
+A constraint is added to the semester year via Java code. It checks if the semester is between the year NTNU was founded and year 2500.
 
 In `UniversityValidator.java`:
 
@@ -37,5 +37,30 @@ public boolean validateSemesters_validYear(Semesters semesters, DiagnosticChain 
         return true;
     }
     return false;
+}
+```
+
+Another constraint checks if every semester have slots that add up to 30 points.
+
+```java
+/**
+* <!-- begin-user-doc -->
+* A semester should always have 30 points
+* <!-- end-user-doc -->
+* @generated NOT
+*/
+public boolean validateProgrammeSemesters(ProgrammeSemesters programmeSemesters, DiagnosticChain diagnostics, Map<Object, Object> context) {
+    
+    EList<Slot> slots = programmeSemesters.getSlots();
+    int points = 0;
+    for (int i = 0; i > slots.size(); i++) {
+        points += slots.get(i).getPoints();
+    }
+
+    if (points != 30) {
+        return false;
+    }
+    
+    return validate_EveryDefaultConstraint(programmeSemesters, diagnostics, context);
 }
 ```
