@@ -22,9 +22,9 @@ There are four commands for the [Gogo](https://enroute.osgi.org/FAQ/500-gogo.htm
 - **list**: List all conversions:
 	- `g! unit:list`
 - **convert**: Perform a conversion
-	- `g! unit:convert [conversionName] [query]` (Example: `g! unit:convert poundtokilo 10`)
+	- `g! unit:convert [conversionName] [query]` (Example: `g! unit:convert poundtokilo 10`)
 - **add**: To add new conversions
-	- `g! unit:add [conversionName] "[formula]"` (Example: `g! unit:add hundredTimes "q*100"`)
+	- `g! unit:add [conversionName] "[formula]"` (Example: `g! unit:add hundredTimes "q*100"`)
 - **remove**: Remove manually added conversion:
 	- `g! unit:remove [conversionName]`
 
