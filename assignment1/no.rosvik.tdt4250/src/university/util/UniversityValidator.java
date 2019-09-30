@@ -164,7 +164,7 @@ public class UniversityValidator extends EObjectValidator {
 
 		if (points != 30) {
 			return false;
-		}		
+		}
 		
 		return validate_EveryDefaultConstraint(programmeSemesters, diagnostics, context);
 	}
