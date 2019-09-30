@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="no.rosvik.tdt4250.converter.api" increment="1569850528380">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="no.rosvik.tdt4250.converter.api"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.201909301335" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.201909301335" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="no.rosvik.tdt4250.converter.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.201909301335" type="Version"/>
+      <attribute name="osgi.wiring.host" value="no.rosvik.tdt4250.converter.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="no.rosvik.tdt4250.converter.api"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="7628" type="Long"/>
+      <attribute name="url" value="generated/no.rosvik.tdt4250.converter.api.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="99E76A7EBE77FD7B9BCDEF65993A6D9FD73B7A50D914662121FD1D02B0AFC7AC"/>
+    </capability>
+    <capability namespace="bndtools.workspace">
+      <attribute name="bndtools.workspace" value="file:/Users/rosvik/Git/TDT4250/assignment2"/>
+      <attribute name="project.path" value="/no.rosvik.tdt4250.converter.api"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+</repository>
