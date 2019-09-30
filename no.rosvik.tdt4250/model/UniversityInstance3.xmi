@@ -10,10 +10,12 @@
       code="MTDT">
     <instances
         startYear="2016">
-      <programmeSemesters/>
+      <programmeSemesters
+          semester="//@semesters.0"/>
     </instances>
   </programmes>
   <semesters
       year="2016"
-      semesterTime="Spring"/>
+      semesterTime="Spring"
+      programmeSemesters="//@programmes.0/@instances.0/@programmeSemesters.0"/>
 </uni:University>
