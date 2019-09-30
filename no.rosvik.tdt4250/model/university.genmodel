@@ -22,7 +22,7 @@
     </genClasses>
     <genClasses ecoreClass="university.ecore#//ProgrammeInstances">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeInstances/programme"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeInstances/semesters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeInstances/programmeSemesters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeInstances/specializations"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute university.ecore#//ProgrammeInstances/startYear"/>
     </genClasses>
@@ -40,6 +40,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeSemesters/programmeInstance"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeSemesters/slots"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//ProgrammeSemesters/semester"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference university.ecore#//ProgrammeSemesters/specialization"/>
     </genClasses>
     <genClasses ecoreClass="university.ecore#//Slot">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Slot/programmeSemester"/>
@@ -51,15 +52,17 @@
     <genClasses ecoreClass="university.ecore#//Semesters">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute university.ecore#//Semesters/year"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute university.ecore#//Semesters/semesterTime"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Semesters/programmeSemesters"/>
     </genClasses>
     <genClasses ecoreClass="university.ecore#//Specializations">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//Specializations/programmeInstance"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute university.ecore#//Specializations/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference university.ecore#//Specializations/programmeSemester"/>
     </genClasses>
     <genClasses ecoreClass="university.ecore#//University">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//University/programmes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//University/courses"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference university.ecore#//University/courseInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference university.ecore#//University/semesters"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
