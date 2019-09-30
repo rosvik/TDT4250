@@ -68,7 +68,7 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMMES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,7 +123,7 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_INSTANCES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Programme</b></em>' reference.
+	 * The feature id for the '<em><b>Programme</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,16 +132,16 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_INSTANCES__PROGRAMME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Semesters</b></em>' reference.
+	 * The feature id for the '<em><b>Programme Semesters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_INSTANCES__SEMESTERS = 1;
+	int PROGRAMME_INSTANCES__PROGRAMME_SEMESTERS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Specializations</b></em>' reference list.
+	 * The feature id for the '<em><b>Specializations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +187,7 @@ public interface UniversityPackage extends EPackage {
 	int COURSES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -251,7 +251,7 @@ public interface UniversityPackage extends EPackage {
 	int COURSE_INSTANCES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Course</b></em>' reference.
+	 * The feature id for the '<em><b>Course</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -297,7 +297,7 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_SEMESTERS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Programme Instance</b></em>' reference list.
+	 * The feature id for the '<em><b>Programme Instance</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -306,7 +306,7 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Slots</b></em>' reference list.
+	 * The feature id for the '<em><b>Slots</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -324,13 +324,22 @@ public interface UniversityPackage extends EPackage {
 	int PROGRAMME_SEMESTERS__SEMESTER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Specialization</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME_SEMESTERS__SPECIALIZATION = 3;
+
+	/**
 	 * The number of structural features of the '<em>Programme Semesters</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_SEMESTERS_FEATURE_COUNT = 3;
+	int PROGRAMME_SEMESTERS_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Programme Semesters</em>' class.
@@ -352,7 +361,7 @@ public interface UniversityPackage extends EPackage {
 	int SLOT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Programme Semester</b></em>' reference.
+	 * The feature id for the '<em><b>Programme Semester</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -443,13 +452,22 @@ public interface UniversityPackage extends EPackage {
 	int SEMESTERS__SEMESTER_TIME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Programme Semesters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTERS__PROGRAMME_SEMESTERS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Semesters</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTERS_FEATURE_COUNT = 2;
+	int SEMESTERS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Semesters</em>' class.
@@ -471,7 +489,7 @@ public interface UniversityPackage extends EPackage {
 	int SPECIALIZATIONS = 7;
 
 	/**
-	 * The feature id for the '<em><b>Programme Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Programme Instance</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -489,13 +507,22 @@ public interface UniversityPackage extends EPackage {
 	int SPECIALIZATIONS__NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Programme Semester</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATIONS__PROGRAMME_SEMESTER = 2;
+
+	/**
 	 * The number of structural features of the '<em>Specializations</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATIONS_FEATURE_COUNT = 2;
+	int SPECIALIZATIONS_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Specializations</em>' class.
@@ -518,7 +545,7 @@ public interface UniversityPackage extends EPackage {
 	int UNIVERSITY = 8;
 
 	/**
-	 * The feature id for the '<em><b>Programmes</b></em>' reference list.
+	 * The feature id for the '<em><b>Programmes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -527,7 +554,7 @@ public interface UniversityPackage extends EPackage {
 	int UNIVERSITY__PROGRAMMES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Courses</b></em>' reference list.
+	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -536,13 +563,13 @@ public interface UniversityPackage extends EPackage {
 	int UNIVERSITY__COURSES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Course Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNIVERSITY__COURSE_INSTANCES = 2;
+	int UNIVERSITY__SEMESTERS = 2;
 
 	/**
 	 * The number of structural features of the '<em>University</em>' class.
@@ -594,10 +621,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getProgrammes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.Programmes#getInstances <em>Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.Programmes#getInstances <em>Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Instances</em>'.
+	 * @return the meta object for the containment reference list '<em>Instances</em>'.
 	 * @see university.Programmes#getInstances()
 	 * @see #getProgrammes()
 	 * @generated
@@ -637,10 +664,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getProgrammeInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link university.ProgrammeInstances#getProgramme <em>Programme</em>}'.
+	 * Returns the meta object for the container reference '{@link university.ProgrammeInstances#getProgramme <em>Programme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme</em>'.
+	 * @return the meta object for the container reference '<em>Programme</em>'.
 	 * @see university.ProgrammeInstances#getProgramme()
 	 * @see #getProgrammeInstances()
 	 * @generated
@@ -648,21 +675,21 @@ public interface UniversityPackage extends EPackage {
 	EReference getProgrammeInstances_Programme();
 
 	/**
-	 * Returns the meta object for the reference '{@link university.ProgrammeInstances#getSemesters <em>Semesters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.ProgrammeInstances#getProgrammeSemesters <em>Programme Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Semesters</em>'.
-	 * @see university.ProgrammeInstances#getSemesters()
+	 * @return the meta object for the containment reference list '<em>Programme Semesters</em>'.
+	 * @see university.ProgrammeInstances#getProgrammeSemesters()
 	 * @see #getProgrammeInstances()
 	 * @generated
 	 */
-	EReference getProgrammeInstances_Semesters();
+	EReference getProgrammeInstances_ProgrammeSemesters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.ProgrammeInstances#getSpecializations <em>Specializations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.ProgrammeInstances#getSpecializations <em>Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Specializations</em>'.
+	 * @return the meta object for the containment reference list '<em>Specializations</em>'.
 	 * @see university.ProgrammeInstances#getSpecializations()
 	 * @see #getProgrammeInstances()
 	 * @generated
@@ -691,10 +718,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getCourses();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.Courses#getInstances <em>Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.Courses#getInstances <em>Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Instances</em>'.
+	 * @return the meta object for the containment reference list '<em>Instances</em>'.
 	 * @see university.Courses#getInstances()
 	 * @see #getCourses()
 	 * @generated
@@ -745,10 +772,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getCourseInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link university.CourseInstances#getCourse <em>Course</em>}'.
+	 * Returns the meta object for the container reference '{@link university.CourseInstances#getCourse <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Course</em>'.
+	 * @return the meta object for the container reference '<em>Course</em>'.
 	 * @see university.CourseInstances#getCourse()
 	 * @see #getCourseInstances()
 	 * @generated
@@ -777,10 +804,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getProgrammeSemesters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.ProgrammeSemesters#getProgrammeInstance <em>Programme Instance</em>}'.
+	 * Returns the meta object for the container reference '{@link university.ProgrammeSemesters#getProgrammeInstance <em>Programme Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Programme Instance</em>'.
+	 * @return the meta object for the container reference '<em>Programme Instance</em>'.
 	 * @see university.ProgrammeSemesters#getProgrammeInstance()
 	 * @see #getProgrammeSemesters()
 	 * @generated
@@ -788,10 +815,10 @@ public interface UniversityPackage extends EPackage {
 	EReference getProgrammeSemesters_ProgrammeInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.ProgrammeSemesters#getSlots <em>Slots</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.ProgrammeSemesters#getSlots <em>Slots</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Slots</em>'.
+	 * @return the meta object for the containment reference list '<em>Slots</em>'.
 	 * @see university.ProgrammeSemesters#getSlots()
 	 * @see #getProgrammeSemesters()
 	 * @generated
@@ -810,6 +837,17 @@ public interface UniversityPackage extends EPackage {
 	EReference getProgrammeSemesters_Semester();
 
 	/**
+	 * Returns the meta object for the container reference '{@link university.ProgrammeSemesters#getSpecialization <em>Specialization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Specialization</em>'.
+	 * @see university.ProgrammeSemesters#getSpecialization()
+	 * @see #getProgrammeSemesters()
+	 * @generated
+	 */
+	EReference getProgrammeSemesters_Specialization();
+
+	/**
 	 * Returns the meta object for class '{@link university.Slot <em>Slot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -820,10 +858,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getSlot();
 
 	/**
-	 * Returns the meta object for the reference '{@link university.Slot#getProgrammeSemester <em>Programme Semester</em>}'.
+	 * Returns the meta object for the container reference '{@link university.Slot#getProgrammeSemester <em>Programme Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme Semester</em>'.
+	 * @return the meta object for the container reference '<em>Programme Semester</em>'.
 	 * @see university.Slot#getProgrammeSemester()
 	 * @see #getSlot()
 	 * @generated
@@ -907,6 +945,17 @@ public interface UniversityPackage extends EPackage {
 	EAttribute getSemesters_SemesterTime();
 
 	/**
+	 * Returns the meta object for the reference list '{@link university.Semesters#getProgrammeSemesters <em>Programme Semesters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Programme Semesters</em>'.
+	 * @see university.Semesters#getProgrammeSemesters()
+	 * @see #getSemesters()
+	 * @generated
+	 */
+	EReference getSemesters_ProgrammeSemesters();
+
+	/**
 	 * Returns the meta object for class '{@link university.Specializations <em>Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -917,10 +966,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getSpecializations();
 
 	/**
-	 * Returns the meta object for the reference '{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}'.
+	 * Returns the meta object for the container reference '{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme Instance</em>'.
+	 * @return the meta object for the container reference '<em>Programme Instance</em>'.
 	 * @see university.Specializations#getProgrammeInstance()
 	 * @see #getSpecializations()
 	 * @generated
@@ -939,6 +988,17 @@ public interface UniversityPackage extends EPackage {
 	EAttribute getSpecializations_Name();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link university.Specializations#getProgrammeSemester <em>Programme Semester</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Programme Semester</em>'.
+	 * @see university.Specializations#getProgrammeSemester()
+	 * @see #getSpecializations()
+	 * @generated
+	 */
+	EReference getSpecializations_ProgrammeSemester();
+
+	/**
 	 * Returns the meta object for class '{@link university.University <em>University</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -949,10 +1009,10 @@ public interface UniversityPackage extends EPackage {
 	EClass getUniversity();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.University#getProgrammes <em>Programmes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.University#getProgrammes <em>Programmes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Programmes</em>'.
+	 * @return the meta object for the containment reference list '<em>Programmes</em>'.
 	 * @see university.University#getProgrammes()
 	 * @see #getUniversity()
 	 * @generated
@@ -960,10 +1020,10 @@ public interface UniversityPackage extends EPackage {
 	EReference getUniversity_Programmes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.University#getCourses <em>Courses</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.University#getCourses <em>Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Courses</em>'.
+	 * @return the meta object for the containment reference list '<em>Courses</em>'.
 	 * @see university.University#getCourses()
 	 * @see #getUniversity()
 	 * @generated
@@ -971,15 +1031,15 @@ public interface UniversityPackage extends EPackage {
 	EReference getUniversity_Courses();
 
 	/**
-	 * Returns the meta object for the reference list '{@link university.University#getCourseInstances <em>Course Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link university.University#getSemesters <em>Semesters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Course Instances</em>'.
-	 * @see university.University#getCourseInstances()
+	 * @return the meta object for the containment reference list '<em>Semesters</em>'.
+	 * @see university.University#getSemesters()
 	 * @see #getUniversity()
 	 * @generated
 	 */
-	EReference getUniversity_CourseInstances();
+	EReference getUniversity_Semesters();
 
 	/**
 	 * Returns the meta object for enum '{@link university.SemesterTime <em>Semester Time</em>}'.
@@ -1035,7 +1095,7 @@ public interface UniversityPackage extends EPackage {
 		EClass PROGRAMMES = eINSTANCE.getProgrammes();
 
 		/**
-		 * The meta object literal for the '<em><b>Instances</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1069,7 +1129,7 @@ public interface UniversityPackage extends EPackage {
 		EClass PROGRAMME_INSTANCES = eINSTANCE.getProgrammeInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Programme</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1077,15 +1137,15 @@ public interface UniversityPackage extends EPackage {
 		EReference PROGRAMME_INSTANCES__PROGRAMME = eINSTANCE.getProgrammeInstances_Programme();
 
 		/**
-		 * The meta object literal for the '<em><b>Semesters</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Programme Semesters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_INSTANCES__SEMESTERS = eINSTANCE.getProgrammeInstances_Semesters();
+		EReference PROGRAMME_INSTANCES__PROGRAMME_SEMESTERS = eINSTANCE.getProgrammeInstances_ProgrammeSemesters();
 
 		/**
-		 * The meta object literal for the '<em><b>Specializations</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Specializations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1111,7 +1171,7 @@ public interface UniversityPackage extends EPackage {
 		EClass COURSES = eINSTANCE.getCourses();
 
 		/**
-		 * The meta object literal for the '<em><b>Instances</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1153,7 +1213,7 @@ public interface UniversityPackage extends EPackage {
 		EClass COURSE_INSTANCES = eINSTANCE.getCourseInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Course</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Course</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1179,7 +1239,7 @@ public interface UniversityPackage extends EPackage {
 		EClass PROGRAMME_SEMESTERS = eINSTANCE.getProgrammeSemesters();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Instance</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Programme Instance</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1187,7 +1247,7 @@ public interface UniversityPackage extends EPackage {
 		EReference PROGRAMME_SEMESTERS__PROGRAMME_INSTANCE = eINSTANCE.getProgrammeSemesters_ProgrammeInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Slots</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Slots</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1203,6 +1263,14 @@ public interface UniversityPackage extends EPackage {
 		EReference PROGRAMME_SEMESTERS__SEMESTER = eINSTANCE.getProgrammeSemesters_Semester();
 
 		/**
+		 * The meta object literal for the '<em><b>Specialization</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME_SEMESTERS__SPECIALIZATION = eINSTANCE.getProgrammeSemesters_Specialization();
+
+		/**
 		 * The meta object literal for the '{@link university.impl.SlotImpl <em>Slot</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1213,7 +1281,7 @@ public interface UniversityPackage extends EPackage {
 		EClass SLOT = eINSTANCE.getSlot();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Semester</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Programme Semester</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1279,6 +1347,14 @@ public interface UniversityPackage extends EPackage {
 		EAttribute SEMESTERS__SEMESTER_TIME = eINSTANCE.getSemesters_SemesterTime();
 
 		/**
+		 * The meta object literal for the '<em><b>Programme Semesters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMESTERS__PROGRAMME_SEMESTERS = eINSTANCE.getSemesters_ProgrammeSemesters();
+
+		/**
 		 * The meta object literal for the '{@link university.impl.SpecializationsImpl <em>Specializations</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1289,7 +1365,7 @@ public interface UniversityPackage extends EPackage {
 		EClass SPECIALIZATIONS = eINSTANCE.getSpecializations();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Programme Instance</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1305,6 +1381,14 @@ public interface UniversityPackage extends EPackage {
 		EAttribute SPECIALIZATIONS__NAME = eINSTANCE.getSpecializations_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Programme Semester</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPECIALIZATIONS__PROGRAMME_SEMESTER = eINSTANCE.getSpecializations_ProgrammeSemester();
+
+		/**
 		 * The meta object literal for the '{@link university.impl.UniversityImpl <em>University</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1315,7 +1399,7 @@ public interface UniversityPackage extends EPackage {
 		EClass UNIVERSITY = eINSTANCE.getUniversity();
 
 		/**
-		 * The meta object literal for the '<em><b>Programmes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Programmes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1323,7 +1407,7 @@ public interface UniversityPackage extends EPackage {
 		EReference UNIVERSITY__PROGRAMMES = eINSTANCE.getUniversity_Programmes();
 
 		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Courses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1331,12 +1415,12 @@ public interface UniversityPackage extends EPackage {
 		EReference UNIVERSITY__COURSES = eINSTANCE.getUniversity_Courses();
 
 		/**
-		 * The meta object literal for the '<em><b>Course Instances</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNIVERSITY__COURSE_INSTANCES = eINSTANCE.getUniversity_CourseInstances();
+		EReference UNIVERSITY__SEMESTERS = eINSTANCE.getUniversity_Semesters();
 
 		/**
 		 * The meta object literal for the '{@link university.SemesterTime <em>Semester Time</em>}' enum.

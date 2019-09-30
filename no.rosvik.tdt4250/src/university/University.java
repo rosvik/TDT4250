@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link university.University#getProgrammes <em>Programmes</em>}</li>
  *   <li>{@link university.University#getCourses <em>Courses</em>}</li>
- *   <li>{@link university.University#getCourseInstances <em>Course Instances</em>}</li>
+ *   <li>{@link university.University#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @see university.UniversityPackage#getUniversity()
@@ -26,39 +26,39 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface University extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Programmes</b></em>' reference list.
+	 * Returns the value of the '<em><b>Programmes</b></em>' containment reference list.
 	 * The list contents are of type {@link university.Programmes}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Programmes</em>' reference list.
+	 * @return the value of the '<em>Programmes</em>' containment reference list.
 	 * @see university.UniversityPackage#getUniversity_Programmes()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Programmes> getProgrammes();
 
 	/**
-	 * Returns the value of the '<em><b>Courses</b></em>' reference list.
+	 * Returns the value of the '<em><b>Courses</b></em>' containment reference list.
 	 * The list contents are of type {@link university.Courses}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Courses</em>' reference list.
+	 * @return the value of the '<em>Courses</em>' containment reference list.
 	 * @see university.UniversityPackage#getUniversity_Courses()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Courses> getCourses();
 
 	/**
-	 * Returns the value of the '<em><b>Course Instances</b></em>' reference list.
-	 * The list contents are of type {@link university.CourseInstances}.
+	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.
+	 * The list contents are of type {@link university.Semesters}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Course Instances</em>' reference list.
-	 * @see university.UniversityPackage#getUniversity_CourseInstances()
-	 * @model
+	 * @return the value of the '<em>Semesters</em>' containment reference list.
+	 * @see university.UniversityPackage#getUniversity_Semesters()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CourseInstances> getCourseInstances();
+	EList<Semesters> getSemesters();
 
 } // University

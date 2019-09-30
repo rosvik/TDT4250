@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import university.ProgrammeInstances;
@@ -39,7 +39,7 @@ import university.UniversityPackage;
  */
 public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Programmes {
 	/**
-	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' reference list.
+	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstances()
@@ -115,7 +115,7 @@ public class ProgrammesImpl extends MinimalEObjectImpl.Container implements Prog
 	@Override
 	public EList<ProgrammeInstances> getInstances() {
 		if (instances == null) {
-			instances = new EObjectWithInverseResolvingEList<ProgrammeInstances>(ProgrammeInstances.class, this, UniversityPackage.PROGRAMMES__INSTANCES, UniversityPackage.PROGRAMME_INSTANCES__PROGRAMME);
+			instances = new EObjectContainmentWithInverseEList<ProgrammeInstances>(ProgrammeInstances.class, this, UniversityPackage.PROGRAMMES__INSTANCES, UniversityPackage.PROGRAMME_INSTANCES__PROGRAMME);
 		}
 		return instances;
 	}

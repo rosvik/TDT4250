@@ -2,13 +2,20 @@
  */
 package university.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import university.ProgrammeSemesters;
 import university.SemesterTime;
 import university.Semesters;
 import university.UniversityPackage;
@@ -23,6 +30,7 @@ import university.UniversityPackage;
  * <ul>
  *   <li>{@link university.impl.SemestersImpl#getYear <em>Year</em>}</li>
  *   <li>{@link university.impl.SemestersImpl#getSemesterTime <em>Semester Time</em>}</li>
+ *   <li>{@link university.impl.SemestersImpl#getProgrammeSemesters <em>Programme Semesters</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +75,16 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * @ordered
 	 */
 	protected SemesterTime semesterTime = SEMESTER_TIME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProgrammeSemesters() <em>Programme Semesters</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProgrammeSemesters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ProgrammeSemesters> programmeSemesters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,12 +157,56 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * @generated
 	 */
 	@Override
+	public EList<ProgrammeSemesters> getProgrammeSemesters() {
+		if (programmeSemesters == null) {
+			programmeSemesters = new EObjectWithInverseResolvingEList<ProgrammeSemesters>(ProgrammeSemesters.class, this, UniversityPackage.SEMESTERS__PROGRAMME_SEMESTERS, UniversityPackage.PROGRAMME_SEMESTERS__SEMESTER);
+		}
+		return programmeSemesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UniversityPackage.SEMESTERS__PROGRAMME_SEMESTERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProgrammeSemesters()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UniversityPackage.SEMESTERS__PROGRAMME_SEMESTERS:
+				return ((InternalEList<?>)getProgrammeSemesters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case UniversityPackage.SEMESTERS__YEAR:
 				return getYear();
 			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
 				return getSemesterTime();
+			case UniversityPackage.SEMESTERS__PROGRAMME_SEMESTERS:
+				return getProgrammeSemesters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,6 +216,7 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -162,6 +225,10 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 				return;
 			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
 				setSemesterTime((SemesterTime)newValue);
+				return;
+			case UniversityPackage.SEMESTERS__PROGRAMME_SEMESTERS:
+				getProgrammeSemesters().clear();
+				getProgrammeSemesters().addAll((Collection<? extends ProgrammeSemesters>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,6 +248,9 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
 				setSemesterTime(SEMESTER_TIME_EDEFAULT);
 				return;
+			case UniversityPackage.SEMESTERS__PROGRAMME_SEMESTERS:
+				getProgrammeSemesters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,6 +267,8 @@ public class SemestersImpl extends MinimalEObjectImpl.Container implements Semes
 				return year != YEAR_EDEFAULT;
 			case UniversityPackage.SEMESTERS__SEMESTER_TIME:
 				return semesterTime != SEMESTER_TIME_EDEFAULT;
+			case UniversityPackage.SEMESTERS__PROGRAMME_SEMESTERS:
+				return programmeSemesters != null && !programmeSemesters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

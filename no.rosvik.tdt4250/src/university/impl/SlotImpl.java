@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import university.CourseInstances;
 import university.ProgrammeSemesters;
 import university.Slot;
@@ -41,16 +42,6 @@ import university.UniversityPackage;
  * @generated
  */
 public class SlotImpl extends MinimalEObjectImpl.Container implements Slot {
-	/**
-	 * The cached value of the '{@link #getProgrammeSemester() <em>Programme Semester</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProgrammeSemester()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProgrammeSemesters programmeSemester;
-
 	/**
 	 * The cached value of the '{@link #getAvaliableCourses() <em>Avaliable Courses</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -147,24 +138,8 @@ public class SlotImpl extends MinimalEObjectImpl.Container implements Slot {
 	 */
 	@Override
 	public ProgrammeSemesters getProgrammeSemester() {
-		if (programmeSemester != null && programmeSemester.eIsProxy()) {
-			InternalEObject oldProgrammeSemester = (InternalEObject)programmeSemester;
-			programmeSemester = (ProgrammeSemesters)eResolveProxy(oldProgrammeSemester);
-			if (programmeSemester != oldProgrammeSemester) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.SLOT__PROGRAMME_SEMESTER, oldProgrammeSemester, programmeSemester));
-			}
-		}
-		return programmeSemester;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProgrammeSemesters basicGetProgrammeSemester() {
-		return programmeSemester;
+		if (eContainerFeatureID() != UniversityPackage.SLOT__PROGRAMME_SEMESTER) return null;
+		return (ProgrammeSemesters)eInternalContainer();
 	}
 
 	/**
@@ -173,12 +148,7 @@ public class SlotImpl extends MinimalEObjectImpl.Container implements Slot {
 	 * @generated
 	 */
 	public NotificationChain basicSetProgrammeSemester(ProgrammeSemesters newProgrammeSemester, NotificationChain msgs) {
-		ProgrammeSemesters oldProgrammeSemester = programmeSemester;
-		programmeSemester = newProgrammeSemester;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UniversityPackage.SLOT__PROGRAMME_SEMESTER, oldProgrammeSemester, newProgrammeSemester);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newProgrammeSemester, UniversityPackage.SLOT__PROGRAMME_SEMESTER, msgs);
 		return msgs;
 	}
 
@@ -189,10 +159,12 @@ public class SlotImpl extends MinimalEObjectImpl.Container implements Slot {
 	 */
 	@Override
 	public void setProgrammeSemester(ProgrammeSemesters newProgrammeSemester) {
-		if (newProgrammeSemester != programmeSemester) {
+		if (newProgrammeSemester != eInternalContainer() || (eContainerFeatureID() != UniversityPackage.SLOT__PROGRAMME_SEMESTER && newProgrammeSemester != null)) {
+			if (EcoreUtil.isAncestor(this, newProgrammeSemester))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (programmeSemester != null)
-				msgs = ((InternalEObject)programmeSemester).eInverseRemove(this, UniversityPackage.PROGRAMME_SEMESTERS__SLOTS, ProgrammeSemesters.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newProgrammeSemester != null)
 				msgs = ((InternalEObject)newProgrammeSemester).eInverseAdd(this, UniversityPackage.PROGRAMME_SEMESTERS__SLOTS, ProgrammeSemesters.class, msgs);
 			msgs = basicSetProgrammeSemester(newProgrammeSemester, msgs);
@@ -293,8 +265,8 @@ public class SlotImpl extends MinimalEObjectImpl.Container implements Slot {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UniversityPackage.SLOT__PROGRAMME_SEMESTER:
-				if (programmeSemester != null)
-					msgs = ((InternalEObject)programmeSemester).eInverseRemove(this, UniversityPackage.PROGRAMME_SEMESTERS__SLOTS, ProgrammeSemesters.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetProgrammeSemester((ProgrammeSemesters)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -320,11 +292,24 @@ public class SlotImpl extends MinimalEObjectImpl.Container implements Slot {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case UniversityPackage.SLOT__PROGRAMME_SEMESTER:
+				return eInternalContainer().eInverseRemove(this, UniversityPackage.PROGRAMME_SEMESTERS__SLOTS, ProgrammeSemesters.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case UniversityPackage.SLOT__PROGRAMME_SEMESTER:
-				if (resolve) return getProgrammeSemester();
-				return basicGetProgrammeSemester();
+				return getProgrammeSemester();
 			case UniversityPackage.SLOT__AVALIABLE_COURSES:
 				return getAvaliableCourses();
 			case UniversityPackage.SLOT__POINTS:
@@ -402,7 +387,7 @@ public class SlotImpl extends MinimalEObjectImpl.Container implements Slot {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case UniversityPackage.SLOT__PROGRAMME_SEMESTER:
-				return programmeSemester != null;
+				return getProgrammeSemester() != null;
 			case UniversityPackage.SLOT__AVALIABLE_COURSES:
 				return avaliableCourses != null && !avaliableCourses.isEmpty();
 			case UniversityPackage.SLOT__POINTS:

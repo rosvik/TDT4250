@@ -4,6 +4,7 @@ package university.util;
 
 import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EPackage;
@@ -149,10 +150,22 @@ public class UniversityValidator extends EObjectValidator {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * A semester should always have 30 points
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean validateProgrammeSemesters(ProgrammeSemesters programmeSemesters, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		
+		EList<Slot> slots = programmeSemesters.getSlots();
+		int points = 0;
+		for (int i = 0; i > slots.size(); i++) {
+			points += slots.get(i).getPoints();
+		}
+
+		if (points != 30) {
+			return false;
+		}		
+		
 		return validate_EveryDefaultConstraint(programmeSemesters, diagnostics, context);
 	}
 

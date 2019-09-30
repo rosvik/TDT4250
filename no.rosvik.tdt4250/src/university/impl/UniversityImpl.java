@@ -4,17 +4,19 @@ package university.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import university.CourseInstances;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import university.Courses;
 import university.Programmes;
+import university.Semesters;
 import university.University;
 import university.UniversityPackage;
 
@@ -28,14 +30,14 @@ import university.UniversityPackage;
  * <ul>
  *   <li>{@link university.impl.UniversityImpl#getProgrammes <em>Programmes</em>}</li>
  *   <li>{@link university.impl.UniversityImpl#getCourses <em>Courses</em>}</li>
- *   <li>{@link university.impl.UniversityImpl#getCourseInstances <em>Course Instances</em>}</li>
+ *   <li>{@link university.impl.UniversityImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UniversityImpl extends MinimalEObjectImpl.Container implements University {
 	/**
-	 * The cached value of the '{@link #getProgrammes() <em>Programmes</em>}' reference list.
+	 * The cached value of the '{@link #getProgrammes() <em>Programmes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProgrammes()
@@ -45,7 +47,7 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	protected EList<Programmes> programmes;
 
 	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
+	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCourses()
@@ -55,14 +57,14 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	protected EList<Courses> courses;
 
 	/**
-	 * The cached value of the '{@link #getCourseInstances() <em>Course Instances</em>}' reference list.
+	 * The cached value of the '{@link #getSemesters() <em>Semesters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCourseInstances()
+	 * @see #getSemesters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CourseInstances> courseInstances;
+	protected EList<Semesters> semesters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,7 +93,7 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	@Override
 	public EList<Programmes> getProgrammes() {
 		if (programmes == null) {
-			programmes = new EObjectResolvingEList<Programmes>(Programmes.class, this, UniversityPackage.UNIVERSITY__PROGRAMMES);
+			programmes = new EObjectContainmentEList<Programmes>(Programmes.class, this, UniversityPackage.UNIVERSITY__PROGRAMMES);
 		}
 		return programmes;
 	}
@@ -104,7 +106,7 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	@Override
 	public EList<Courses> getCourses() {
 		if (courses == null) {
-			courses = new EObjectResolvingEList<Courses>(Courses.class, this, UniversityPackage.UNIVERSITY__COURSES);
+			courses = new EObjectContainmentEList<Courses>(Courses.class, this, UniversityPackage.UNIVERSITY__COURSES);
 		}
 		return courses;
 	}
@@ -115,11 +117,29 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 	 * @generated
 	 */
 	@Override
-	public EList<CourseInstances> getCourseInstances() {
-		if (courseInstances == null) {
-			courseInstances = new EObjectResolvingEList<CourseInstances>(CourseInstances.class, this, UniversityPackage.UNIVERSITY__COURSE_INSTANCES);
+	public EList<Semesters> getSemesters() {
+		if (semesters == null) {
+			semesters = new EObjectContainmentEList<Semesters>(Semesters.class, this, UniversityPackage.UNIVERSITY__SEMESTERS);
 		}
-		return courseInstances;
+		return semesters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case UniversityPackage.UNIVERSITY__PROGRAMMES:
+				return ((InternalEList<?>)getProgrammes()).basicRemove(otherEnd, msgs);
+			case UniversityPackage.UNIVERSITY__COURSES:
+				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+			case UniversityPackage.UNIVERSITY__SEMESTERS:
+				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -134,8 +154,8 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 				return getProgrammes();
 			case UniversityPackage.UNIVERSITY__COURSES:
 				return getCourses();
-			case UniversityPackage.UNIVERSITY__COURSE_INSTANCES:
-				return getCourseInstances();
+			case UniversityPackage.UNIVERSITY__SEMESTERS:
+				return getSemesters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,9 +177,9 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 				getCourses().clear();
 				getCourses().addAll((Collection<? extends Courses>)newValue);
 				return;
-			case UniversityPackage.UNIVERSITY__COURSE_INSTANCES:
-				getCourseInstances().clear();
-				getCourseInstances().addAll((Collection<? extends CourseInstances>)newValue);
+			case UniversityPackage.UNIVERSITY__SEMESTERS:
+				getSemesters().clear();
+				getSemesters().addAll((Collection<? extends Semesters>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -179,8 +199,8 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 			case UniversityPackage.UNIVERSITY__COURSES:
 				getCourses().clear();
 				return;
-			case UniversityPackage.UNIVERSITY__COURSE_INSTANCES:
-				getCourseInstances().clear();
+			case UniversityPackage.UNIVERSITY__SEMESTERS:
+				getSemesters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,8 +218,8 @@ public class UniversityImpl extends MinimalEObjectImpl.Container implements Univ
 				return programmes != null && !programmes.isEmpty();
 			case UniversityPackage.UNIVERSITY__COURSES:
 				return courses != null && !courses.isEmpty();
-			case UniversityPackage.UNIVERSITY__COURSE_INSTANCES:
-				return courseInstances != null && !courseInstances.isEmpty();
+			case UniversityPackage.UNIVERSITY__SEMESTERS:
+				return semesters != null && !semesters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

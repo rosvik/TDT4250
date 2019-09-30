@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import university.CourseInstances;
 import university.Courses;
 import university.Semesters;
@@ -31,16 +32,6 @@ import university.UniversityPackage;
  * @generated
  */
 public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements CourseInstances {
-	/**
-	 * The cached value of the '{@link #getCourse() <em>Course</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourse()
-	 * @generated
-	 * @ordered
-	 */
-	protected Courses course;
-
 	/**
 	 * The cached value of the '{@link #getSemester() <em>Semester</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -77,24 +68,8 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	public Courses getCourse() {
-		if (course != null && course.eIsProxy()) {
-			InternalEObject oldCourse = (InternalEObject)course;
-			course = (Courses)eResolveProxy(oldCourse);
-			if (course != oldCourse) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.COURSE_INSTANCES__COURSE, oldCourse, course));
-			}
-		}
-		return course;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Courses basicGetCourse() {
-		return course;
+		if (eContainerFeatureID() != UniversityPackage.COURSE_INSTANCES__COURSE) return null;
+		return (Courses)eInternalContainer();
 	}
 
 	/**
@@ -103,12 +78,7 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public NotificationChain basicSetCourse(Courses newCourse, NotificationChain msgs) {
-		Courses oldCourse = course;
-		course = newCourse;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UniversityPackage.COURSE_INSTANCES__COURSE, oldCourse, newCourse);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newCourse, UniversityPackage.COURSE_INSTANCES__COURSE, msgs);
 		return msgs;
 	}
 
@@ -119,10 +89,12 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	public void setCourse(Courses newCourse) {
-		if (newCourse != course) {
+		if (newCourse != eInternalContainer() || (eContainerFeatureID() != UniversityPackage.COURSE_INSTANCES__COURSE && newCourse != null)) {
+			if (EcoreUtil.isAncestor(this, newCourse))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (course != null)
-				msgs = ((InternalEObject)course).eInverseRemove(this, UniversityPackage.COURSES__INSTANCES, Courses.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newCourse != null)
 				msgs = ((InternalEObject)newCourse).eInverseAdd(this, UniversityPackage.COURSES__INSTANCES, Courses.class, msgs);
 			msgs = basicSetCourse(newCourse, msgs);
@@ -181,8 +153,8 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
-				if (course != null)
-					msgs = ((InternalEObject)course).eInverseRemove(this, UniversityPackage.COURSES__INSTANCES, Courses.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetCourse((Courses)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -208,11 +180,24 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case UniversityPackage.COURSE_INSTANCES__COURSE:
+				return eInternalContainer().eInverseRemove(this, UniversityPackage.COURSES__INSTANCES, Courses.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
-				if (resolve) return getCourse();
-				return basicGetCourse();
+				return getCourse();
 			case UniversityPackage.COURSE_INSTANCES__SEMESTER:
 				if (resolve) return getSemester();
 				return basicGetSemester();
@@ -265,7 +250,7 @@ public class CourseInstancesImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case UniversityPackage.COURSE_INSTANCES__COURSE:
-				return course != null;
+				return getCourse() != null;
 			case UniversityPackage.COURSE_INSTANCES__SEMESTER:
 				return semester != null;
 		}

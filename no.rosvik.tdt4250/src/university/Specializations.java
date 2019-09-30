@@ -2,6 +2,7 @@
  */
 package university;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}</li>
  *   <li>{@link university.Specializations#getName <em>Name</em>}</li>
+ *   <li>{@link university.Specializations#getProgrammeSemester <em>Programme Semester</em>}</li>
  * </ul>
  *
  * @see university.UniversityPackage#getSpecializations()
@@ -23,24 +25,24 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Specializations extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Programme Instance</b></em>' reference.
+	 * Returns the value of the '<em><b>Programme Instance</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link university.ProgrammeInstances#getSpecializations <em>Specializations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Programme Instance</em>' reference.
+	 * @return the value of the '<em>Programme Instance</em>' container reference.
 	 * @see #setProgrammeInstance(ProgrammeInstances)
 	 * @see university.UniversityPackage#getSpecializations_ProgrammeInstance()
 	 * @see university.ProgrammeInstances#getSpecializations
-	 * @model opposite="specializations" required="true"
+	 * @model opposite="specializations" required="true" transient="false"
 	 * @generated
 	 */
 	ProgrammeInstances getProgrammeInstance();
 
 	/**
-	 * Sets the value of the '{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}' reference.
+	 * Sets the value of the '{@link university.Specializations#getProgrammeInstance <em>Programme Instance</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Programme Instance</em>' reference.
+	 * @param value the new value of the '<em>Programme Instance</em>' container reference.
 	 * @see #getProgrammeInstance()
 	 * @generated
 	 */
@@ -67,5 +69,19 @@ public interface Specializations extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Programme Semester</b></em>' containment reference list.
+	 * The list contents are of type {@link university.ProgrammeSemesters}.
+	 * It is bidirectional and its opposite is '{@link university.ProgrammeSemesters#getSpecialization <em>Specialization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Programme Semester</em>' containment reference list.
+	 * @see university.UniversityPackage#getSpecializations_ProgrammeSemester()
+	 * @see university.ProgrammeSemesters#getSpecialization
+	 * @model opposite="specialization" containment="true"
+	 * @generated
+	 */
+	EList<ProgrammeSemesters> getProgrammeSemester();
 
 } // Specializations

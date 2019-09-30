@@ -23,24 +23,24 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface CourseInstances extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Course</b></em>' reference.
+	 * Returns the value of the '<em><b>Course</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link university.Courses#getInstances <em>Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Course</em>' reference.
+	 * @return the value of the '<em>Course</em>' container reference.
 	 * @see #setCourse(Courses)
 	 * @see university.UniversityPackage#getCourseInstances_Course()
 	 * @see university.Courses#getInstances
-	 * @model opposite="instances" required="true"
+	 * @model opposite="instances" required="true" transient="false"
 	 * @generated
 	 */
 	Courses getCourse();
 
 	/**
-	 * Sets the value of the '{@link university.CourseInstances#getCourse <em>Course</em>}' reference.
+	 * Sets the value of the '{@link university.CourseInstances#getCourse <em>Course</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Course</em>' reference.
+	 * @param value the new value of the '<em>Course</em>' container reference.
 	 * @see #getCourse()
 	 * @generated
 	 */

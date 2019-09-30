@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Programmes extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Instances</b></em>' reference list.
+	 * Returns the value of the '<em><b>Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link university.ProgrammeInstances}.
 	 * It is bidirectional and its opposite is '{@link university.ProgrammeInstances#getProgramme <em>Programme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instances</em>' reference list.
+	 * @return the value of the '<em>Instances</em>' containment reference list.
 	 * @see university.UniversityPackage#getProgrammes_Instances()
 	 * @see university.ProgrammeInstances#getProgramme
-	 * @model opposite="programme"
+	 * @model opposite="programme" containment="true"
 	 * @generated
 	 */
 	EList<ProgrammeInstances> getInstances();

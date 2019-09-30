@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import university.CourseInstances;
@@ -40,7 +40,7 @@ import university.UniversityPackage;
  */
 public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses {
 	/**
-	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' reference list.
+	 * The cached value of the '{@link #getInstances() <em>Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstances()
@@ -136,7 +136,7 @@ public class CoursesImpl extends MinimalEObjectImpl.Container implements Courses
 	@Override
 	public EList<CourseInstances> getInstances() {
 		if (instances == null) {
-			instances = new EObjectWithInverseResolvingEList<CourseInstances>(CourseInstances.class, this, UniversityPackage.COURSES__INSTANCES, UniversityPackage.COURSE_INSTANCES__COURSE);
+			instances = new EObjectContainmentWithInverseEList<CourseInstances>(CourseInstances.class, this, UniversityPackage.COURSES__INSTANCES, UniversityPackage.COURSE_INSTANCES__COURSE);
 		}
 		return instances;
 	}

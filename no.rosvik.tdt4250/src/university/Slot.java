@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Slot extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Programme Semester</b></em>' reference.
+	 * Returns the value of the '<em><b>Programme Semester</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link university.ProgrammeSemesters#getSlots <em>Slots</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Programme Semester</em>' reference.
+	 * @return the value of the '<em>Programme Semester</em>' container reference.
 	 * @see #setProgrammeSemester(ProgrammeSemesters)
 	 * @see university.UniversityPackage#getSlot_ProgrammeSemester()
 	 * @see university.ProgrammeSemesters#getSlots
-	 * @model opposite="slots" required="true"
+	 * @model opposite="slots" required="true" transient="false"
 	 * @generated
 	 */
 	ProgrammeSemesters getProgrammeSemester();
 
 	/**
-	 * Sets the value of the '{@link university.Slot#getProgrammeSemester <em>Programme Semester</em>}' reference.
+	 * Sets the value of the '{@link university.Slot#getProgrammeSemester <em>Programme Semester</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Programme Semester</em>' reference.
+	 * @param value the new value of the '<em>Programme Semester</em>' container reference.
 	 * @see #getProgrammeSemester()
 	 * @generated
 	 */

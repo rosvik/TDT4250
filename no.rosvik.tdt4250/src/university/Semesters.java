@@ -2,6 +2,7 @@
  */
 package university;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link university.Semesters#getYear <em>Year</em>}</li>
  *   <li>{@link university.Semesters#getSemesterTime <em>Semester Time</em>}</li>
+ *   <li>{@link university.Semesters#getProgrammeSemesters <em>Programme Semesters</em>}</li>
  * </ul>
  *
  * @see university.UniversityPackage#getSemesters()
@@ -68,5 +70,19 @@ public interface Semesters extends EObject {
 	 * @generated
 	 */
 	void setSemesterTime(SemesterTime value);
+
+	/**
+	 * Returns the value of the '<em><b>Programme Semesters</b></em>' reference list.
+	 * The list contents are of type {@link university.ProgrammeSemesters}.
+	 * It is bidirectional and its opposite is '{@link university.ProgrammeSemesters#getSemester <em>Semester</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Programme Semesters</em>' reference list.
+	 * @see university.UniversityPackage#getSemesters_ProgrammeSemesters()
+	 * @see university.ProgrammeSemesters#getSemester
+	 * @model opposite="semester"
+	 * @generated
+	 */
+	EList<ProgrammeSemesters> getProgrammeSemesters();
 
 } // Semesters

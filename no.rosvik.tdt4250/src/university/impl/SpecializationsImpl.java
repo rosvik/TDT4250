@@ -2,16 +2,22 @@
  */
 package university.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import university.ProgrammeInstances;
+import university.ProgrammeSemesters;
 import university.Specializations;
 import university.UniversityPackage;
 
@@ -25,21 +31,12 @@ import university.UniversityPackage;
  * <ul>
  *   <li>{@link university.impl.SpecializationsImpl#getProgrammeInstance <em>Programme Instance</em>}</li>
  *   <li>{@link university.impl.SpecializationsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link university.impl.SpecializationsImpl#getProgrammeSemester <em>Programme Semester</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SpecializationsImpl extends MinimalEObjectImpl.Container implements Specializations {
-	/**
-	 * The cached value of the '{@link #getProgrammeInstance() <em>Programme Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProgrammeInstance()
-	 * @generated
-	 * @ordered
-	 */
-	protected ProgrammeInstances programmeInstance;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -59,6 +56,16 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProgrammeSemester() <em>Programme Semester</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProgrammeSemester()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ProgrammeSemesters> programmeSemester;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,24 +93,8 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	public ProgrammeInstances getProgrammeInstance() {
-		if (programmeInstance != null && programmeInstance.eIsProxy()) {
-			InternalEObject oldProgrammeInstance = (InternalEObject)programmeInstance;
-			programmeInstance = (ProgrammeInstances)eResolveProxy(oldProgrammeInstance);
-			if (programmeInstance != oldProgrammeInstance) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE, oldProgrammeInstance, programmeInstance));
-			}
-		}
-		return programmeInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProgrammeInstances basicGetProgrammeInstance() {
-		return programmeInstance;
+		if (eContainerFeatureID() != UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE) return null;
+		return (ProgrammeInstances)eInternalContainer();
 	}
 
 	/**
@@ -112,12 +103,7 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public NotificationChain basicSetProgrammeInstance(ProgrammeInstances newProgrammeInstance, NotificationChain msgs) {
-		ProgrammeInstances oldProgrammeInstance = programmeInstance;
-		programmeInstance = newProgrammeInstance;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE, oldProgrammeInstance, newProgrammeInstance);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newProgrammeInstance, UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE, msgs);
 		return msgs;
 	}
 
@@ -128,10 +114,12 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	public void setProgrammeInstance(ProgrammeInstances newProgrammeInstance) {
-		if (newProgrammeInstance != programmeInstance) {
+		if (newProgrammeInstance != eInternalContainer() || (eContainerFeatureID() != UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE && newProgrammeInstance != null)) {
+			if (EcoreUtil.isAncestor(this, newProgrammeInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (programmeInstance != null)
-				msgs = ((InternalEObject)programmeInstance).eInverseRemove(this, UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS, ProgrammeInstances.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newProgrammeInstance != null)
 				msgs = ((InternalEObject)newProgrammeInstance).eInverseAdd(this, UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS, ProgrammeInstances.class, msgs);
 			msgs = basicSetProgrammeInstance(newProgrammeInstance, msgs);
@@ -170,12 +158,28 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public EList<ProgrammeSemesters> getProgrammeSemester() {
+		if (programmeSemester == null) {
+			programmeSemester = new EObjectContainmentWithInverseEList<ProgrammeSemesters>(ProgrammeSemesters.class, this, UniversityPackage.SPECIALIZATIONS__PROGRAMME_SEMESTER, UniversityPackage.PROGRAMME_SEMESTERS__SPECIALIZATION);
+		}
+		return programmeSemester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
-				if (programmeInstance != null)
-					msgs = ((InternalEObject)programmeInstance).eInverseRemove(this, UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS, ProgrammeInstances.class, msgs);
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetProgrammeInstance((ProgrammeInstances)otherEnd, msgs);
+			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_SEMESTER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProgrammeSemester()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -190,8 +194,24 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
 				return basicSetProgrammeInstance(null, msgs);
+			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_SEMESTER:
+				return ((InternalEList<?>)getProgrammeSemester()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, UniversityPackage.PROGRAMME_INSTANCES__SPECIALIZATIONS, ProgrammeInstances.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -203,10 +223,11 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
-				if (resolve) return getProgrammeInstance();
-				return basicGetProgrammeInstance();
+				return getProgrammeInstance();
 			case UniversityPackage.SPECIALIZATIONS__NAME:
 				return getName();
+			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_SEMESTER:
+				return getProgrammeSemester();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -216,6 +237,7 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -224,6 +246,10 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case UniversityPackage.SPECIALIZATIONS__NAME:
 				setName((String)newValue);
+				return;
+			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_SEMESTER:
+				getProgrammeSemester().clear();
+				getProgrammeSemester().addAll((Collection<? extends ProgrammeSemesters>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,6 +269,9 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 			case UniversityPackage.SPECIALIZATIONS__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_SEMESTER:
+				getProgrammeSemester().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,9 +285,11 @@ public class SpecializationsImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_INSTANCE:
-				return programmeInstance != null;
+				return getProgrammeInstance() != null;
 			case UniversityPackage.SPECIALIZATIONS__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case UniversityPackage.SPECIALIZATIONS__PROGRAMME_SEMESTER:
+				return programmeSemester != null && !programmeSemester.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
