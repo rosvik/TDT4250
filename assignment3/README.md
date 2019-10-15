@@ -12,7 +12,7 @@ A live demo of the project is available on here: https://rosvik.github.io/TDT425
 Running the project:
 
 1. Open `assignment3/no.rosvik.tdt4250.generator` and `assignment1/no.rosvik.tdt4250` in Eclipse. You might be asked to import the university package in `SiteGenerator.java`.
-2. Right click `SiteGenerator.mtl` in `no.rosvik.tdt4250.generator.main` and select "Run As -> Run Ronfigurations...".
+2. Right click `SiteGenerator.mtl` in `no.rosvik.tdt4250.generator.main` and select "Run As -> Run Configurations...".
 3. Use the following configuration:
 
 ![Configuration screenshot](docs/run_config.png)
