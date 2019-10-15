@@ -18,14 +18,67 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>[university.name/]</title>
+		<style>
+			body {
+				font-family: Helvetica, Arial, sans-serif;
+			}
+			section {
+				border: 1px solid black;
+				margin: 3px;
+				padding: 20px;
+			}
+		</style>
 	</head>
 	<body>
 	
 		<h1>[university.name/]</h1>
 	
+		[for (programme : Programmes | university.programmes)]
+			[displayProgramme(programme)/]
+		[/for]
+
+
 	</body>
 	</html>
 
 [/file]
 
+[/template]
+
+[template public displayProgramme(programme: Programmes)]
+	<section>
+		<h2>[programme.code/] [programme.name/]</h2>
+
+		[for (programmeInstance : ProgrammeInstances | programme.instances)]
+			[displayProgrammeInstance(programmeInstance)/]
+		[/for]
+	</section>
+[/template]
+
+[template public displayProgrammeInstance(programmeInstance: ProgrammeInstances)]
+	<p>Start year: [programmeInstance.startYear/]</p>
+
+	[for (programmeSemester : ProgrammeSemesters | programmeInstance.programmeSemesters)]
+		[displayProgrammeSemester(programmeSemester)/]
+	[/for]
+[/template]
+
+[template public displayProgrammeSemester(programmeSemester: ProgrammeSemesters)]
+	<section>
+		<h3>[programmeSemester.semester.semesterTime/] [programmeSemester.semester.year/]</h3>
+	
+		[for (slot : Slot | programmeSemester.slots)]
+			<p>[slot.name/]</p>
+			<section>
+			[for (courseInstance : CourseInstances | slot.avaliableCourses)]
+				[displayCourseInstance(courseInstance)/]
+			[/for]
+			</section>
+		[/for]
+
+	</section>
+[/template]
+
+[template public displayCourseInstance(courseInstance: CourseInstances)]
+	<p>[courseInstance.course.code/] [courseInstance.course.name/]: [courseInstance.course.credits/] points</p>
 [/template]
