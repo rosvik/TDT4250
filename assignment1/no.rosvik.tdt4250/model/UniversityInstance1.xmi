@@ -3,8 +3,9 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:uni="no.rosvik.uni.test"
-    xsi:schemaLocation="no.rosvik.uni.test university.ecore">
+    xmlns:uni="platform:/no.rosvik.tdt4250.model/model/university.ecore"
+    xsi:schemaLocation="platform:/no.rosvik.tdt4250.model/model/university.ecore university.ecore"
+    name="NTNU">
   <programmes
       name="Datateknologi"
       code="MTDT">
