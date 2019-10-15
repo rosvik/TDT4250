@@ -17,5 +17,5 @@ Running the project:
 
 ![Configuration screenshot](docs/run_config.png)
 
-4. Click "Run"
+4. Click "Apply", then "Run"
 5. The generated HTML file will appear in the `target` folder.
