@@ -14,9 +14,20 @@
       <programmeSemesters
           semester="//@semesters.0">
         <slots
-            avaliableCourses="//@courses.0/@instances.0"
+            avaliableCourses="//@courses.1/@instances.0 //@courses.2/@instances.0 //@courses.3/@instances.0 //@courses.4/@instances.0"
             points="30"
             name="Obligatorisk"/>
+      </programmeSemesters>
+      <programmeSemesters
+          semester="//@semesters.1">
+        <slots
+            avaliableCourses="//@courses.5/@instances.0 //@courses.0/@instances.0 //@courses.6/@instances.0"
+            points="30"
+            name="Obligatorisk"/>
+        <slots
+            avaliableCourses="//@courses.7/@instances.0 //@courses.8/@instances.0"
+            slotType="V"
+            name="Valgbare emner"/>
       </programmeSemesters>
     </instances>
   </programmes>
@@ -26,12 +37,61 @@
     <instances
         semester="//@semesters.0"/>
   </courses>
+  <courses credits="7.5"
+      code="TMA4140"
+      name="Diskret matematikk">
+    <instances
+        semester="//@semesters.0"/>
+  </courses>
+  <courses credits="7.5"
+      code="TMA4100"
+      name="Matematikk 1">
+    <instances
+        semester="//@semesters.0"/>
+  </courses>
+  <courses credits="7.5"
+      code="TDT4110"
+      name="Informasjonsteknologi, grunnkurs">
+    <instances
+        semester="//@semesters.0"/>
+  </courses>
+  <courses credits="7.5"
+      code="EXPH0004"
+      name="Examen philosophicum">
+    <instances
+        semester="//@semesters.0"/>
+  </courses>
+  <courses credits="7.5"
+      code="TDT4112"
+      name="Programmeringslab for datateknologi">
+    <instances
+        semester="//@semesters.1"/>
+  </courses>
+  <courses credits="7.5"
+      code="TFE4101"
+      name="Krets- og digitalteknikk">
+    <instances
+        semester="//@semesters.1"/>
+  </courses>
+  <courses credits="7.5"
+      code="TMA4115"
+      name="Matematikk 3">
+    <instances
+        semester="//@semesters.1"/>
+  </courses>
+  <courses credits="7.5"
+      code="TMA4105"
+      name="Matematikk 2">
+    <instances
+        semester="//@semesters.1"/>
+  </courses>
   <semesters
       year="2016"
       programmeSemesters="//@programmes.0/@instances.0/@programmeSemesters.0"/>
   <semesters
       year="2017"
-      semesterTime="Spring"/>
+      semesterTime="Spring"
+      programmeSemesters="//@programmes.0/@instances.0/@programmeSemesters.1"/>
   <semesters
       year="2017"/>
 </uni:University>
