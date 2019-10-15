@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module SiteGenerator.
+ */]
+[module SiteGenerator('platform:/no.rosvik.tdt4250.model/model/university.ecore', 'http://www.eclipse.org/emf/2002/Ecore')]
+
+[**
+ * The documentation of the template SiteGenerator.
+ * @param anAssociationClassElement
+ */]
+[template public SiteGenerator(university : University)]
+[comment @main/]
+
+[file (university.name.concat('.html'), false, 'UTF-8')]
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>[university.name/]</title>
+	</head>
+	<body>
+	
+		<h1>[university.name/]</h1>
+	
+	</body>
+	</html>
+
+[/file]
+
+[/template]
